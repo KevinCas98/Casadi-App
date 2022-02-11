@@ -1,0 +1,8 @@
+{
+  "name": "CaSaDi",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
