@@ -1,30 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar> 
-    <ion-grid>
-      <ion-row class="ion-align-content-center">
-
-        <ion-col>
-          <ion-icon name="information-circle-outline" size="large"></ion-icon>
-        </ion-col>
-
-        <ion-col size="8">
-          <ion-img [src]="'assets/logo-muni.png'"></ion-img>
-        </ion-col>
-
-        <ion-col>
-          <ion-icon name="notifications-outline" size="large"></ion-icon>    
-        </ion-col>
-
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div class="header-section">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large"Home></ion-title>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="3" class="ion-text-start" text-start>
+            <ion-icon name="information-circle-outline" size="large"></ion-icon>
+          </ion-col>
+          <ion-col size="6">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
+          </ion-col>
+          <ion-col size="3" class="ion-text-end">
+            <ion-icon name="notifications-outline" size="large"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-toolbar>
   </ion-header>
+</div>
 
-</ion-content>
+<div class="body-section">
+  <ion-content [fullscreen]="true">
+    <ion-button id="trigger-button">VALIDAR IDENTIDAD</ion-button>
+    <ion-modal trigger="trigger-button">
+      <ng-template>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+        <ion-checkbox disabled="false">
+          He leído y acepto los términos y condiciones de uso
+        </ion-checkbox>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
+</div>

@@ -1,11 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Perfil
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<div class="header-section">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="3" class="ion-text-start" text-start>
+            <ion-icon name="information-circle-outline" size="large"></ion-icon>
+          </ion-col>
+          <ion-col size="6">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
+          </ion-col>
+          <ion-col size="3" class="ion-text-end">
+            <ion-icon name="notifications-outline" size="large"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+</div>
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -13,4 +24,40 @@
     </ion-toolbar>
   </ion-header>
 
+  <form>
+    <ion-button href="#">CARGAR CERTIFICADO</ion-button>
+    <ion-button href="#">ÚLTIMOS MOVIMIENTOS</ion-button>
+    <ion-item lines="full">
+      <ion-label position="floating">Sexo</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Fecha de Nacimiento</ion-label>
+      <ion-input type="date" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Celular</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Provincia</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Ciudad</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button href="#" type="submit" color="danger" expand="block">GUARDAR</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-text color="dark">
+      <h5 >CAMBIAR USUARIO</h5>
+    </ion-text>
+  </form>
 </ion-content>
