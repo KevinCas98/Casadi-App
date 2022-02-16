@@ -8,5 +8,14 @@ import { Component } from '@angular/core';
 export class Tab1Page {
 
   constructor() {}
+  // changeEvent(event) {
+  //   console.log("event.target.value",event);
+  //   if(event.checked){
+  //      this.checkedbtn = false;
+  //      console.log("checkedbtn value",this.checkedbtn);
+  //   }else{
+  //      this.checkedbtn = true;
+  //   }        
+  //  }
 
 }
