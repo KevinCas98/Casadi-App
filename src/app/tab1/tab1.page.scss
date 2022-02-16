@@ -13,3 +13,13 @@ ion-checkbox {
     --border-color: dark;
     --border-color-checked: success;
 }
+
+ion-card {
+    --background:rgb (255, 255, 255);
+    border-style: hidden;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.city-news {
+    margin-left: -250px;
+}
