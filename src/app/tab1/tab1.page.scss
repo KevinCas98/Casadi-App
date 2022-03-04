@@ -9,11 +9,6 @@ ion-icon {
     color: white;
 }
 
-ion-checkbox {
-    --border-color: dark;
-    --border-color-checked: success;
-}
-
 .city-news {
     margin-left: -250px;
 }
@@ -42,6 +37,7 @@ ion-checkbox {
     height: 55%;
     width: 100%;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .validation {
@@ -80,4 +76,8 @@ ion-checkbox {
     font-weight: 900;
     text-align: left;
     font-size: 26px;
+}
+
+.terms-modal {
+    visibility: visible;
 }

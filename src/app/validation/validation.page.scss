@@ -1,0 +1,19 @@
+ion-img {
+    height: auto;
+    width: auto;
+    margin: auto;
+    display: block;
+}
+
+ion-icon {
+    color: white;
+}
+
+ion-content {
+    text-align: center;
+}
+
+ion-input {
+    --placeholder-color: rgb(128, 128, 128);	
+    --placeholder-font-style: italic;
+}
