@@ -20,35 +20,19 @@
 
 <div class="body-section">
   <ion-content [fullscreen]="true">
-    <ion-card>
-      <!-- <ion-card-header>
-        <ion-card-subtitle>Novedades</ion-card-subtitle>
-        <ion-card-title>del Municipio</ion-card-title>
-      </ion-card-header> -->
-      <ion-card-content>
-        <ion-img class="city-news" [src]="'assets/imgs/city-hall.png'"></ion-img>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle></ion-card-subtitle>
-        <ion-card-title></ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-button id="terms-conditions" color="danger" expand="block" shape="round">VALIDAR IDENTIDAD</ion-button>
-      </ion-card-content>
-    </ion-card>
-    <ion-modal trigger="terms-conditions">
-      <ng-template>
-        <ion-content>
-          <h5 color="dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
-          <ion-item>
-            <ion-label>He leído y acepto los términos y condiciones de uso</ion-label>
-            <ion-checkbox [(ngModel)]="checkedbtn" color="dark"></ion-checkbox>
-          </ion-item>
-          <button [routerLink]="['/validation']" (click)="register()" class="register-btn" [disabled]="!checkedbtn" ion-button icon-only>CONTINUAR</button>
-        </ion-content>
-      </ng-template>
-    </ion-modal>
+    <div class="homescreen-content" scroll="false">
+      <div class="split news">
+        <div class="news-centered">
+          <p class="news-text">NOVEDADES DEL MUNICIPIO</p>
+        </div>
+      </div>
+      <hr>
+      <div class="split carnet">
+        <div class="carnet-centered">
+          <p class="carnet-text">ACCEDÉ A TU CARNET SALUDABLE DIGITAL AQUÍ</p>
+            <ion-button [routerLink]="['']" id="" color="danger" expand="block" shape="round">MI CARNET</ion-button>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </div>
