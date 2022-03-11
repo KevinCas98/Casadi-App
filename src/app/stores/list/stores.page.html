@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>stores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of data.stores | keyvalue">
+      <ion-label>
+        <h2>{{ item.key }}</h2>
+        <h3>{{ item.value.id }}</h3>
+        <h3>{{ item.value.name }}</h3>
+        <h3>{{ item.value.cuit }}</h3>
+        <h3>{{ item.value.category.id }}</h3>
+        <h3>{{ item.value.category.name }}</h3>
+        <h3>{{ item.value.benefit.id }}</h3>
+        <h3>{{ item.value.benefit.name }}</h3>
+        <h3>{{ item.value.benefit.pin }}</h3>
+        <h3>{{ item.value.benefit.conditions }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
