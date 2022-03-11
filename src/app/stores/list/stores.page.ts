@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StoresService, SearchType } from '../../services/api/stores.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-stores',
@@ -12,7 +14,7 @@ export class StoresPage implements OnInit {
   results: Observable<any>;
   data: any[] = [];
 
-  constructor(private storesService: StoresService) {
+  constructor(private storesService: StoresService, private route: Router) {
    }
 
   ngOnInit() {
@@ -20,11 +22,16 @@ export class StoresPage implements OnInit {
     this.listStores();
   }
 
-  listStores(){
+  public listStores(){
     this.results = this.storesService.getListStores();  
     this.results.subscribe((response) => {
       this.data = response;
     });
+  }
+
+  public goToStoreById(id: number){
+    console.log(id)
+    this.route.navigate([encodeURI('/stores-view/'+id)]);
   }
 
 }

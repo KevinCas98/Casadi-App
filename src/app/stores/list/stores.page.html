@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let item of data.stores | keyvalue">
-      <ion-label>
+      <ion-label (click)="goToStoreById(item.value.id)">
         <h2>{{ item.key }}</h2>
         <h3>{{ item.value.id }}</h3>
         <h3>{{ item.value.name }}</h3>

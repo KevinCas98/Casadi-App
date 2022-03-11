@@ -40,7 +40,7 @@ const routes: Routes = [
     loadChildren: () => import('./stores/list/stores.module').then( m => m.StoresPageModule)
   },
   {
-    path: 'stores-view',
+    path: 'stores-view/:id',
     loadChildren: () => import('./stores/view/view.module').then( m => m.ViewPageModule)
   },
 ];

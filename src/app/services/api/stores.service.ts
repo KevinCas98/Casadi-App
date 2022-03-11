@@ -24,7 +24,12 @@ export class StoresService {
 
   constructor(public global : GlobalService, private http: HttpClient) { }
 
-  getListStores(): Observable<any>{
-    return this.http.get<{ data: any[] }>(this.global.getBaseApiUrl()+'stores/list')
+  public getListStores(): Observable<any>{
+    return this.http.get<{ data: any[] }>(this.global.getBaseApiUrl()+'stores/list');
   }
+
+  public getStoreById(id: number):Observable<any>{
+    return this.http.get<{ data: any[] }>(this.global.getBaseApiUrl()+'stores/view?store='+id);
+  }
+
 }
