@@ -25,7 +25,6 @@ export class StoresService {
   constructor(public global : GlobalService, private http: HttpClient) { }
 
   getListStores(): Observable<any>{
-    console.log(this.global.getBaseApiUrl()+'stores/list');
     return this.http.get<{ data: any[] }>(this.global.getBaseApiUrl()+'stores/list')
   }
 }
