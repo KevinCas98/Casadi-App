@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StoresService, SearchType } from '../../services/api/stores.service';
+import { StoresService } from '../../services/api/stores.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
