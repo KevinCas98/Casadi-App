@@ -3,7 +3,7 @@
     <ion-toolbar>
       <ion-grid>
         <ion-row size="12" class="ion-text-center ion-align-items-center">
-          <ion-col size="3" class="ion-text-start" text-start>
+          <ion-col size="3" class="ion-text-start">
             <ion-button fill="clear" shape="round">
               <ion-icon name="information-circle-outline" size="large"></ion-icon>
             </ion-button>
@@ -23,50 +23,40 @@
 </div>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-icon name="person-circle-sharp" size="large" id="profile-icon"></ion-icon>
-  <div>
-
-    <form>
-      <ion-button href="#">CARGAR CERTIFICADO</ion-button>
-      <ion-button href="#">ÚLTIMOS MOVIMIENTOS</ion-button>
+  <div id="profile">
+    <p id="title">PERFIL</p>
+    <ion-avatar id="avatar">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-button id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-button id="records" href="#" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
+    <form id="profile-form">
       <ion-item lines="full">
-        <ion-label position="floating">Sexo</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" placeholder="SEXO" required></ion-input>
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="floating">Fecha de Nacimiento</ion-label>
-        <ion-input type="date" required></ion-input>
+        <ion-input type="date" placeholder="FECHA DE NACIMIENTO" required></ion-input>
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="floating">Celular</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input type="number" placeholder="DNI" required></ion-input>
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="floating">E-mail</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="number" placeholder="TELEFONO"></ion-input>
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="floating">Provincia</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" placeholder="EMAIL"></ion-input>
       </ion-item>
       <ion-item lines="full">
-        <ion-label position="floating">Ciudad</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-input type="text" placeholder="PROVINCIA" required></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-input type="text" placeholder="CIUDAD" required></ion-input>
       </ion-item>
       <ion-row>
         <ion-col>
-          <ion-button href="#" type="submit" color="danger" expand="block">GUARDAR</ion-button>
+          <ion-button href="#" type="submit" color="danger" expand="block" size="large" shape="round">GUARDAR</ion-button>
         </ion-col>
       </ion-row>
-      <ion-text color="dark">
-        <h5 >CAMBIAR USUARIO</h5>
-      </ion-text>
     </form>
   </div>
 </ion-content>

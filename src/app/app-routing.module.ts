@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'information',
     loadChildren: () => import('./information/information.module').then( m => m.InformationPageModule)
   },
+  {
+    path: 'carnet-load',
+    loadChildren: () => import('./carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
+  },
 ];
 @NgModule({
   imports: [

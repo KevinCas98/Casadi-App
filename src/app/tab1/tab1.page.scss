@@ -24,7 +24,6 @@ ion-icon {
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    
 }
 
 .news {
@@ -52,6 +51,18 @@ ion-icon {
     background-size: cover;
 }
 
+.validation {
+    color: white;
+    background-color: rgb(5, 37, 59);
+    font-size: 10px;
+    background-image: url(/assets/imgs/needle.png);
+    left:0;
+    top: 55%;
+    height: 45%;
+    width: 100%;
+    background-size: cover;
+}
+
 .news-centered {
     position: relative;
     top: 55%;
@@ -61,6 +72,14 @@ ion-icon {
 }
 
 .carnet-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.validation-centered {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -78,6 +97,18 @@ ion-icon {
     font-size: 26px;
 }
 
-.terms-modal {
-    visibility: visible;
+.validation-text {
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 55px;
+}
+
+.carnet-text {
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 55px;
 }
