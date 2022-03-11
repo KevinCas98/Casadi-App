@@ -5,14 +5,40 @@ ion-img {
     display: block;
 }
 
-// info-button {
-//     --background: rgb(5, 37, 59);
-// }
-
 ion-icon {
     color: rgb(255, 255, 255);
 }
 
-#profile-icon{
-    color:black;
+ ion-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#profile {
+    margin: auto;
+    width: auto;
+    padding: 20px;
+}
+
+#carnet-load {
+    margin-top: 25px;
+}
+
+#records {
+    margin-top: 15px;
+}
+
+#profile-form{
+    margin-top: 2s0px;
+}
+
+#avatar {
+    margin: auto;
+}
+
+#title {
+    font-weight: 700;
 }

@@ -36,12 +36,17 @@ const routes: Routes = [
     loadChildren: () => import('./information/information.module').then( m => m.InformationPageModule)
   },
   {
+<<<<<<< HEAD
+    path: 'carnet-load',
+    loadChildren: () => import('./carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
+=======
     path: 'stores-list',
     loadChildren: () => import('./stores/list/stores.module').then( m => m.StoresPageModule)
   },
   {
     path: 'stores-view/:id',
     loadChildren: () => import('./stores/view/view.module').then( m => m.ViewPageModule)
+>>>>>>> fa341bd7966c6fd9735f0383c5ee9caa18920d94
   },
 ];
 @NgModule({
