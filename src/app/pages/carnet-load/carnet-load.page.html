@@ -18,6 +18,12 @@
 </div>
 
 <ion-content>
-
+  <ion-input placeholder="Enter Input"></ion-input>
+  <ion-input placeholder="Enter Input"></ion-input>
+  <ion-button expand="block">
+    <ion-icon lazy="true" slot="center" name="image"></ion-icon>
+    <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+      accept="image/png, image/jpeg">
+  </ion-button>
 </ion-content>
 
