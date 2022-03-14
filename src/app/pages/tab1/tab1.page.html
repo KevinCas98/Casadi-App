@@ -1,0 +1,49 @@
+<div class="header-section">
+  <ion-header slot="start" [translucent]="true">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="3" class="ion-text-start" text-start>
+            <ion-button fill="clear" shape="round">
+              <ion-icon name="information-circle-outline" size="large"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
+          </ion-col>
+          <ion-col size="3" class="ion-text-end">
+            <ion-button fill="clear" shape="round">
+              <ion-icon name="notifications-outline" size="large"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+</div>
+
+<div class="body-section">
+  <ion-content [fullscreen]="true">
+    <div class="homescreen-content" scroll="false">
+      <div class="split news">
+        <div class="news-centered">
+          <p class="news-text">NOVEDADES DEL MUNICIPIO</p>
+        </div>
+      </div>
+      <hr>
+      <div class="split validation">
+        <div class="validation-centered">
+          <p class="validation-text">VALIDÁ TU IDENTDIAD Y ACCEDÉ A TU 
+            CARNET SALUDABLE DIGITAL</p>
+            <ion-button [routerLink]="['/tabs/tab3']" id="" color="danger" expand="block" shape="round" size="large">VALIDAR IDENTIDAD</ion-button>
+        </div>
+      </div>
+      <!-- <div class="split carnet">
+        <div class="carnet-centered">
+          <p class="carnet-text">ACCEDÉ A TU CARNET SALUDABLE DIGITAL AQUÍ</p>
+            <ion-button [routerLink]="['']" id="" color="danger" expand="block" shape="round" size="large">MI CARNET</ion-button>
+        </div>
+      </div> -->
+    </div>
+  </ion-content>
+</div>
