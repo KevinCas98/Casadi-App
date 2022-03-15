@@ -36,5 +36,4 @@ export class CarnetLoadPage implements OnInit {
   
     };
   };
-
 }

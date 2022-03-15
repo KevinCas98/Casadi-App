@@ -18,17 +18,50 @@
 </div>
 
 <ion-content>
-  <ion-input placeholder="Dosis"></ion-input>
-  <ion-input placeholder="Tipo de Carnet"></ion-input>
-  <ion-button expand="block">
-    <ion-icon lazy="true" slot="center" name="image"></ion-icon>
-    <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
-      accept="image/png, image/jpeg">
-  </ion-button>
+  <form>
+    <ion-item>
+      <ion-input placeholder="Dosis"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Tipo de Carnet"></ion-input>
+    </ion-item>
+    <ion-list>
+
+
+      <ion-item>
+        <ion-button expand="block">
+          <ion-icon lazy="true" slot="center" name="image"></ion-icon>
+          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+            accept="image/png, image/jpeg">
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block">
+          <ion-icon lazy="true" slot="center" name="image"></ion-icon>
+          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+            accept="image/png, image/jpeg">
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block">
+          <ion-icon lazy="true" slot="center" name="image"></ion-icon>
+          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+            accept="image/png, image/jpeg">
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block">
+          <ion-icon lazy="true" slot="center" name="image"></ion-icon>
+          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+            accept="image/png, image/jpeg">
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </form>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-button type="submit" color="danger" expand="block">ENVIAR</ion-button>
 </ion-content>
-
