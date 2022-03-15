@@ -5,47 +5,47 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' 
   },
   { path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'registration',
-    loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
+    loadChildren: () => import('./pages/registration/registration.module').then( m => m.RegistrationPageModule)
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
   {
     path: 'main',
-    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule)
   },
   {
     path: 'validation',
-    loadChildren: () => import('./validation/validation.module').then( m => m.ValidationPageModule)
+    loadChildren: () => import('./pages/validation/validation.module').then( m => m.ValidationPageModule)
   },
   {
     path: 'information',
-    loadChildren: () => import('./information/information.module').then( m => m.InformationPageModule)
+    loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
   },
   {
     path: 'carnet-load',
-    loadChildren: () => import('./carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
+    loadChildren: () => import('./pages/carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
   },
   {
     path: 'stores-list',
-    loadChildren: () => import('./stores/list/stores.module').then( m => m.StoresPageModule)
+    loadChildren: () => import('./pages/stores/list/stores.module').then( m => m.StoresPageModule)
   },
   {
     path: 'stores-view/:id',
-    loadChildren: () => import('./stores/view/view.module').then( m => m.ViewPageModule)
+    loadChildren: () => import('./pages/stores/view/view.module').then( m => m.ViewPageModule)
   },
 ];
 @NgModule({

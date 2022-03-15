@@ -3,8 +3,7 @@
     <ion-toolbar>
       <ion-grid>
         <ion-row size="12" class="ion-text-center ion-align-items-center">
-          <ion-col size="3" class="ion-text-start"
-          >
+          <ion-col size="3" class="ion-text-start">
             <ion-back-button defaultHref="tabs/tab3"></ion-back-button>
           </ion-col>
           <ion-col size="6">
@@ -19,6 +18,17 @@
 </div>
 
 <ion-content>
-
+  <ion-input placeholder="Dosis"></ion-input>
+  <ion-input placeholder="Tipo de Carnet"></ion-input>
+  <ion-button expand="block">
+    <ion-icon lazy="true" slot="center" name="image"></ion-icon>
+    <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+      accept="image/png, image/jpeg">
+  </ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
 
