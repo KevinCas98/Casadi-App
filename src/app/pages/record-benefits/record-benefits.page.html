@@ -3,18 +3,13 @@
     <ion-toolbar>
       <ion-grid>
         <ion-row size="12" class="ion-text-center ion-align-items-center">
-          <ion-col size="3" class="ion-text-start" text-start>
-            <ion-button fill="clear" shape="round">
-              <ion-icon name="information-circle-outline" size="large"></ion-icon>
-            </ion-button>
+          <ion-col size="3" class="ion-text-start">
+            <ion-back-button defaultHref="tabs/tab3"></ion-back-button>
           </ion-col>
           <ion-col size="6">
             <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
           </ion-col>
           <ion-col size="3" class="ion-text-end">
-            <ion-button fill="clear" shape="round">
-              <ion-icon name="notifications-outline" size="large"></ion-icon>
-            </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -23,5 +18,18 @@
 </div>
 
 <ion-content>
-
+  <ion-text>
+    <h1>ÚLTIMOS MOVIMIENTOS</h1>
+  </ion-text>
+  <p>
+    Por estar vacunado, ACCEDISTE a los
+    siguientes BENEFICIOS:
+  </p>
+  <ul class="list-group-flush" id="recordList">
+    <li id="listItem">first item</li>
+    <li id="listItem">second item</li>
+    <li id="listItem">third item</li>
+    <li id="listItem">fourth item</li>
+    <li id="listItem">fifth item</li>
+</ul>
 </ion-content>

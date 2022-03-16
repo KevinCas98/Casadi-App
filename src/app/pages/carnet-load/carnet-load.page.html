@@ -19,38 +19,43 @@
 
 <ion-content>
   <form>
-    <ion-item>
-      <ion-input placeholder="Dosis"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input placeholder="Tipo de Carnet"></ion-input>
-    </ion-item>
-    <ion-list>
-
-
+    <ion-label>DOSIS</ion-label>
+    <ion-select placeholder="Elija una">
+      <ion-select-option value="1">PRIMERA</ion-select-option>
+      <ion-select-option value="2">SEGUNDA</ion-select-option>
+      <ion-select-option value="3">TERCERA</ion-select-option>
+      <ion-select-option value="4">CUARTA</ion-select-option>
+    </ion-select>
+    <ion-item lines="none"><ion-label></ion-label></ion-item>
+    <ion-label>TIPO DE CARNET</ion-label>
+    <ion-select placeholder="Elija uno">
+      <ion-select-option value="f">FISICO</ion-select-option>
+      <ion-select-option value="d">DIGITAL</ion-select-option>
+    </ion-select>
+    <ion-list lines="none">
       <ion-item>
-        <ion-button expand="block">
+        <ion-button id="stButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-item>
       <ion-item>
-        <ion-button expand="block">
+        <ion-button id="ndButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-item>
       <ion-item>
-        <ion-button expand="block">
+        <ion-button id="rdButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-item>
       <ion-item>
-        <ion-button expand="block">
+        <ion-button id="thButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
@@ -58,10 +63,10 @@
       </ion-item>
     </ion-list>
   </form>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="absolute">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-button type="submit" color="danger" expand="block">ENVIAR</ion-button>
+  <ion-button id="enviar" type="submit" expand="block" color="dark" fill="outline" shape="round">ENVIAR</ion-button>
 </ion-content>
