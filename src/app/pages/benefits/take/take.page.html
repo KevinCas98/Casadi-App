@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>take</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="benefitData" (ngSubmit)="sendBenefitTake()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">PIN</ion-label>
+      <ion-input type="text" formControlName="pin" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pin.errors?.required">
+      El pin es requerido
+    </span>
+    <small class="error ion-padding" *ngIf="isSubmitted && msj">{{ msjText }}</small>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
