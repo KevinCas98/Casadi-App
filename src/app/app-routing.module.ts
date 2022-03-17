@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'stores-view/:id',
     loadChildren: () => import('./pages/stores/view/view.module').then( m => m.ViewPageModule)
   },
+  {
+    path: 'benefits-take/:store/:benefit',
+    loadChildren: () => import('./pages/benefits/take/take.module').then( m => m.TakePageModule)
+  },
 ];
 @NgModule({
   imports: [

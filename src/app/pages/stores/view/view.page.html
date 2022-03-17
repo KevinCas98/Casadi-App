@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item>
-      <ion-label>
+      <ion-label (click)="goToTakeBenefits(data.id, benefit.id)">
         <h2>{{ data.name }}</h2>
         <h3>{{ data.id }}</h3>
         <h3>{{ data.cuit }}</h3>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StoresService } from '../../../services/api/stores.service';
+import { StoresService } from '../../../services/api/stores/stores.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -30,7 +30,6 @@ export class StoresPage implements OnInit {
   }
 
   public goToStoreById(id: number){
-    console.log(id)
     this.route.navigate([encodeURI('/stores-view/'+id)]);
   }
 

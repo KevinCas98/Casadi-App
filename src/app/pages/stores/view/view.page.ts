@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StoresService } from '../../../services/api/stores.service';
+import { StoresService } from '../../../services/api/stores/stores.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ export class ViewPage implements OnInit {
   category: any[] = [];
   benefit: any[] = [];
 
-  constructor(private storesService: StoresService, private actRoute: ActivatedRoute) { 
+  constructor(private storesService: StoresService, private actRoute: ActivatedRoute, private route: Router) { 
     this.id = this.actRoute.snapshot.params.id;
   }
 
@@ -34,6 +34,10 @@ export class ViewPage implements OnInit {
       this.category = response['stores'][this.id]["category"];
       this.benefit = response['stores'][this.id]["benefit"];
     });
+  }
+
+  public goToTakeBenefits(idStore, idBenefits){
+    this.route.navigate([encodeURI('/benefits-take/'+idStore+'/'+idBenefits)]);
   }
 
 }
