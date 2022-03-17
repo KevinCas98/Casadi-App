@@ -25,11 +25,10 @@
     Por estar vacunado, ACCEDISTE a los
     siguientes BENEFICIOS:
   </p>
-  <ul class="list-group-flush" id="recordList">
-    <li id="listItem">first item</li>
-    <li id="listItem">second item</li>
-    <li id="listItem">third item</li>
-    <li id="listItem">fourth item</li>
-    <li id="listItem">fifth item</li>
+  <ul class="list-group-flush" id="recordList" *ngFor="let item of data.record_benefits | keyvalue">
+    <li id="listItem">
+      {{ item.value.benefit.name }}<br>
+      {{ item.value.dateRecord }}
+    </li>
 </ul>
 </ion-content>

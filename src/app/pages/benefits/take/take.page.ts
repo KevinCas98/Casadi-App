@@ -49,7 +49,7 @@ export class TakePage implements OnInit {
         this.benefitsService.setRecordBenefits(formData).subscribe(
           (response) => {
             if(response["success"]){
-              this.route.navigate([encodeURI("record-benefits/"+response["id_record"])]);
+              this.route.navigate([encodeURI("record-benefits")]);
             }else{
               this.msj = true;
               this.msjText = response["msj"];

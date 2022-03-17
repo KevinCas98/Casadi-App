@@ -18,5 +18,8 @@ export class BenefitsService {
     return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'record_benefits/record', formData)
   }
 
+  public getListBenefitsByUser(id: number):Observable<any>{
+    return this.http.get<{ data: any[] }>(this.global.getBaseApiUrl()+'benefits/list?type=users&id='+id)
+  }
   
 }
