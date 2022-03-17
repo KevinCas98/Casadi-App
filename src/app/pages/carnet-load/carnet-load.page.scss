@@ -1,0 +1,23 @@
+ion-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ion-content form {
+    padding: 5%;
+}
+
+ion-label {
+    margin-bottom: 5px;
+}
+
+#enviar {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+ion-list {
+    display: none;
+}

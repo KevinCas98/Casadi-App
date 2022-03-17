@@ -1,0 +1,58 @@
+ion-content {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+h1 {
+    color: rgb(235, 94, 108);
+    text-align: center;
+    font-weight: 600;
+    margin: auto;
+    width: auto;
+    font-size: 26px;
+}
+
+p {
+    color: #05253b;
+    text-align: start;
+    margin: auto;
+    width: auto;
+    margin-top: 20px;
+    padding-left: 10% !important;
+}
+
+#recordList {
+    list-style-type: none;
+    margin-top: 35px;
+  }
+  
+  #listItem {
+    position: relative;
+    margin: 0;
+    padding-bottom: 2em;
+    padding-left: 20px;
+  }
+  
+  #listItem:before {
+    content: '';
+    background-color: rgb(235, 94, 108);
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 6px;
+    width: 1.5px;
+  }
+  
+  #listItem:after {
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 0;
+    top: 6px;
+    height: 14px;
+    width: 14px;
+  }
