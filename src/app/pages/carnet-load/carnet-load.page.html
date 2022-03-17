@@ -17,10 +17,10 @@
   </ion-header>
 </div>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <form>
     <ion-label>DOSIS</ion-label>
-    <ion-select placeholder="Elija una">
+    <ion-select interface="popover" placeholder="Elija una">
       <ion-select-option value="1">PRIMERA</ion-select-option>
       <ion-select-option value="2">SEGUNDA</ion-select-option>
       <ion-select-option value="3">TERCERA</ion-select-option>
@@ -28,7 +28,7 @@
     </ion-select>
     <ion-item lines="none"><ion-label></ion-label></ion-item>
     <ion-label>TIPO DE CARNET</ion-label>
-    <ion-select placeholder="Elija uno">
+    <ion-select interface="popover" placeholder="Elija uno">
       <ion-select-option value="f">FISICO</ion-select-option>
       <ion-select-option value="d">DIGITAL</ion-select-option>
     </ion-select>
@@ -63,7 +63,7 @@
       </ion-item>
     </ion-list>
   </form>
-  <ion-fab vertical="bottom" horizontal="end" slot="absolute">
+  <ion-fab edge="true" vertical="bottom" horizontal="end" slot="absolute">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
