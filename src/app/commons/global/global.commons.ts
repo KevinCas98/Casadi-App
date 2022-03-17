@@ -8,7 +8,7 @@ export class GlobalCommon {
   private baseAPiUrl: string;
 
   constructor() { 
-    this.baseAPiUrl = "http://localhost:80/casadi/api/";
+    this.baseAPiUrl = "http://localhost/casadi/api/";
   }
 
   public getBaseApiUrl(){
