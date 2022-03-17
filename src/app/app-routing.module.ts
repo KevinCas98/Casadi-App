@@ -52,10 +52,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/benefits/record-benefits/record-benefits.module').then( m => m.RecordBenefitsPageModule)
   },
   {
-    path: 'record-benefits/:id',
-    loadChildren: () => import('./pages/benefits/record-benefits/record-benefits.module').then( m => m.RecordBenefitsPageModule)
-  },
-  {
     path: 'benefits-take/:store/:benefit',
     loadChildren: () => import('./pages/benefits/take/take.module').then( m => m.TakePageModule)
   },
