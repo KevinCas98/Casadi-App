@@ -27,18 +27,9 @@
   </p>
   <ul class="list-group-flush" id="recordList">
     <li id="listItem" *ngFor="let item of data.record_benefits | keyvalue">
-      {{ item.value.benefit.name }}<br>
-      {{ item.value.dateRecord }}
+      <ion-text>{{ item.value.dateRecord }}</ion-text> - Obtuviste un beneficio de <ion-text>{{ item.value.benefit.name }}</ion-text> en <ion-text>BETO'S</ion-text>
     </li>
-</ul>
-<div class="timeline">
-  <div class="container right">
-    <div class="content">
-      <h2>2016</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-</div>
+  </ul>
 </ion-content>
 
 <ion-tabs>
