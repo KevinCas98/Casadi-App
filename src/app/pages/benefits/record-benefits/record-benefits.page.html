@@ -17,7 +17,7 @@
   </ion-header>
 </div>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-text>
     <h1>ÚLTIMOS MOVIMIENTOS</h1>
   </ion-text>
@@ -25,8 +25,8 @@
     Por estar vacunado, ACCEDISTE a los
     siguientes BENEFICIOS:
   </p>
-  <ul class="list-group-flush" id="recordList" *ngFor="let item of data.record_benefits | keyvalue">
-    <li id="listItem">
+  <ul class="list-group-flush" id="recordList">
+    <li id="listItem" *ngFor="let item of data.record_benefits | keyvalue">
       {{ item.value.benefit.name }}<br>
       {{ item.value.dateRecord }}
     </li>
