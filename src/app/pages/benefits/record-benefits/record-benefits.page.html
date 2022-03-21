@@ -27,7 +27,7 @@
   </p>
   <ul class="list-group-flush" id="recordList">
     <li id="listItem" *ngFor="let item of data.record_benefits | keyvalue">
-      <ion-text>{{ item.value.dateRecord | date:'MM/YY'  }}</ion-text> - Obtuviste un beneficio de <ion-text>{{ item.value.benefit.name }}</ion-text> en <ion-text>{{ item.value.stores.name }}</ion-text>
+      <ion-text>{{ item.value.dateRecord | date:'MM/YY' }}</ion-text> - Obtuviste un beneficio de <ion-text>{{ item.value.benefit.name }}</ion-text> en <ion-text>{{ item.value.stores.name }}</ion-text>
     </li>
   </ul>
 </ion-content>

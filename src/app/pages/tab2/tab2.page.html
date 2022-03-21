@@ -23,10 +23,24 @@
 </div>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Beneficios</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <ion-img [src]="'assets/imgs/tordo-fondo.png'" class="tordo-img"></ion-img>
+  <ion-text>
+    <h4>BENEFICIOS</h4>
+    <h5>DESDE LA MUNICIPALIDAD DE La calera PREMIAMOS TU 
+      COMPROMISO CON LOS SIGUIENTES BENEFICIOS EN LOS 
+      COMERCIOS PROMOTORES. Recordá que podrán pedirte
+      Tu DNI para validar tu identidad.</h5>
+  </ion-text>
+  <ion-row>
+    <ion-col class="store-label" size="4">
+      <ion-icon name="pricetag"></ion-icon>
+      <ion-label>GASTRONOMÍA</ion-label>
+      <ion-img [src]="'assets/imgs/mesita.png'" ng-Click="nextPage()"></ion-img>    
+    </ion-col>
+    <ion-col class="store-desc" size="8">
+      <h1>RESTAURANTE 1</h1>
+      <h2>LUNES A JUEVES 20% DE 
+        DESCUENTO </h2>
+    </ion-col>
+  </ion-row>
 </ion-content>
