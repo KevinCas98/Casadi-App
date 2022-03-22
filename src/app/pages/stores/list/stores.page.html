@@ -1,10 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>stores</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="header-section">
+  <ion-header slot="start" [translucent]="true">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="2" class="ion-text-start">
+            <ion-back-button defaultHref="stores-list"></ion-back-button>
+          </ion-col>
+          <ion-col size="8" style="display: ruby;">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'" class="header-img"></ion-img>
+          </ion-col>
+          <ion-col size="2" class="ion-text-end">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 <ion-content [fullscreen]="true">
+  <ion-img [src]="'assets/imgs/tordo-fondo.png'" class="tordo-img"></ion-img>
+  <ion-text>
+    <h4>BENEFICIOS</h4>
+    <h5>DESDE LA MUNICIPALIDAD DE La calera PREMIAMOS TU 
+      COMPROMISO CON LOS SIGUIENTES BENEFICIOS EN LOS 
+      COMERCIOS PROMOTORES. Recordá que podrán pedirte
+      Tu DNI para validar tu identidad.</h5>
+  </ion-text>
   <ion-list>
     <ion-item *ngFor="let item of data.stores | keyvalue">
       <ion-label (click)="goToStoreById(item.value.id)">
