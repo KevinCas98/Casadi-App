@@ -7,30 +7,52 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form>
+  <form [formGroup]="userData" (ngSubmit)="registrationForm()" novalidate>
     <ion-item lines="full">
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" formControlName="name" required></ion-input>
     </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+      * El campo es requerido
+    </span>
     <ion-item lines="full">
       <ion-label position="floating">Apellido</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" formControlName="last_name" required></ion-input>
     </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.last_name.errors?.required">
+      * El campo es requerido
+    </span>
     <ion-item lines="full">
       <ion-label position="floating">DNI</ion-label>
-      <ion-input type="dni" required></ion-input>
+      <ion-input type="text" formControlName="dni" required></ion-input>
     </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dni.errors?.required">
+      * El campo es requerido
+    </span>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="email" formControlName="email" required></ion-input>
     </ion-item>
+    <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      * El campo es requerido
+    </small>
+    <!--question mark(?) is a safe navigation operator -->
+    <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      * El email no es valido
+    </small>
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" formControlName="password" required></ion-input>
     </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+      * El campo es requerido
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.pattern">
+      * La contraseña no es valido
+    </span>
     <ion-row>
       <ion-col>
-        <ion-button [routerLink]="['/login']" type="submit" color="danger" expand="block">CONFIRMAR</ion-button>
+        <ion-button type="submit" color="danger" expand="block">CONFIRMAR</ion-button>
       </ion-col>
     </ion-row>
   </form>
