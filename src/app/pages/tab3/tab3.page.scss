@@ -17,10 +17,15 @@ ion-icon {
     text-align: center;
 }
 
+p{
+
+}
+
 #profile {
     margin: auto;
     width: auto;
     padding: 20px;
+    margin-bottom: 55px;
 }
 
 #carnet-load {
@@ -32,7 +37,7 @@ ion-icon {
 }
 
 #profile-form {
-    margin-top: 2s0px;
+    margin-top: 20px;
 }
 
 #avatar {
@@ -41,4 +46,6 @@ ion-icon {
 
 #title {
     font-weight: 700;
+    letter-spacing: 3px;
+    color: rgb(235, 94, 108);
 }
