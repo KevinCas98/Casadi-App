@@ -34,7 +34,7 @@
     <ion-col class="store-label" size="4">
       <ion-icon name="pricetag" class="pricetag"></ion-icon>
       <ion-label>{{ item.value.category.name }}</ion-label>
-      <ion-img [src]="'assets/imgs/mesita.png'" (click)="goToStoreById(item.value.id)"></ion-img>    
+      <ion-img src='{{urlWeb}}/stores/{{item.value.id}}/{{item.value.image1}}' (click)="goToStoreById(item.value.id)"></ion-img>    
     </ion-col>
     <ion-col class="store-desc" size="8" (click)="goToStoreById(item.value.id)">
       <h1>{{ item.value.name }}</h1>
