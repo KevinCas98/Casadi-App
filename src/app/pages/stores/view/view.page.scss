@@ -1,0 +1,77 @@
+ion-content {
+    background-color: #05253b;
+    margin-bottom: 55px;
+}
+
+ion-list {
+    background-color: #05253b;
+}
+
+.header-img {
+    height: auto;
+    width: 75%;
+    margin: auto;
+    display: block;
+}
+
+ion-icon {
+    color: #ffffff;
+}
+
+.mesita-img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 6px 8px 0 #0000004d;
+}
+
+.container{
+    margin: 5px 0px 0px 15px;
+    width: 20px;
+    height: 30px;
+    display: grid;
+    grid-template-columns: 40px 40px;
+    grid-template-rows: 40px 40px;
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
+}
+
+.box{
+    background-color: #05253b;
+    color: #05253b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-icon {
+        font-size: 24px;
+    }
+}
+
+.store-title {
+    padding: 10px 15px 15px 15px
+}
+
+h2 {
+    color: #05253b;
+    margin: 5px 0px 0px 0px;
+    text-transform: uppercase;
+}
+
+.pricetag {
+    color: #05253b;
+    font-size: 16px;
+    transform: rotateY(180deg);
+}
+
+.label {
+    color: #05253b;
+    font-size: 14px;
+    display: inline-block;
+    margin-left: 8px;
+    text-transform: uppercase;
+    margin: 7px 0px 7px 10px;
+}
+
+.pinButton {
+    margin: 10px 25px 10px 25px;
+}

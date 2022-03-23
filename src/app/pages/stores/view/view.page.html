@@ -1,11 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>view</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="header-section">
+  <ion-header slot="start" [translucent]="true">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="2" class="ion-text-start">
+            <ion-back-button defaultHref="tabs/tab2"></ion-back-button>
+          </ion-col>
+          <ion-col size="8">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'" class="header-img"></ion-img>
+          </ion-col>
+          <ion-col size="2" class="ion-text-end">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
+  <ion-img [src]="'assets/imgs/mesitaBanner.png'" class="mesita-img"></ion-img>
+  <!-- <ion-list>
     <ion-item>
       <ion-label (click)="goToTakeBenefits(data.id, benefit.id)">
         <h2>{{ data.name }}</h2>
@@ -19,5 +33,23 @@
         <h3>{{ benefit.conditions }}</h3>
       </ion-label>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+  <ion-grid [fixed]="true">
+    <ion-row size="12">
+      <ion-col size="8" class="store-title"> 
+        <h2>{{ data.name }}</h2>
+        <ion-icon name="pricetags-sharp" class="pricetag"></ion-icon>
+        <h5 class="label">{{ category.name }}</h5>
+      </ion-col>
+      <ion-col size="4"> 
+        <div class="container">
+          <div class="box"><ion-icon name="logo-instagram"></ion-icon></div>
+          <div class="box"><ion-icon name="logo-whatsapp"></ion-icon></div>
+          <div class="box"><ion-icon name="globe"></ion-icon></div>
+          <div class="box"><ion-icon name="call"></ion-icon></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="block" class="pinButton"></ion-button>
 </ion-content>

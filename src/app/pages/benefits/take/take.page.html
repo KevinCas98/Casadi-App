@@ -1,8 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>take</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="header-section">
+  <ion-header slot="start" [translucent]="true">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="2" class="ion-text-start">
+            <ion-back-button defaultHref="stores-view"></ion-back-button>
+          </ion-col>
+          <ion-col size="8">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'" class="header-img"></ion-img>
+          </ion-col>
+          <ion-col size="2" class="ion-text-end">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+</div>
 
 <ion-content>
   <form [formGroup]="benefitData" (ngSubmit)="sendBenefitTake()" novalidate>

@@ -2,17 +2,17 @@
   <ion-header slot="start" [translucent]="true">
     <ion-toolbar>
       <ion-grid>
-        <ion-row size="12" class="ion-text-center ion-align-items-center">
-          <ion-col size="3" class="ion-text-start" text-start>
-            <ion-button fill="clear" shape="round">
+        <ion-row size="12" class="ion-text-center">
+          <ion-col size="3" class="ion-text-center" text-start>
+            <ion-button fill="clear" shape="round" size="small">
               <ion-icon name="information-circle-outline" size="large"></ion-icon>
             </ion-button>
           </ion-col>
           <ion-col size="6">
-            <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
+            <ion-img [src]="'assets/imgs/logoMuni2.png'" class="header-img"></ion-img>
           </ion-col>
           <ion-col size="3" class="ion-text-end">
-            <ion-button fill="clear" shape="round">
+            <ion-button fill="clear" shape="round" size="small">
               <ion-icon name="notifications-outline" size="large"></ion-icon>
             </ion-button>
           </ion-col>
@@ -26,21 +26,20 @@
   <ion-img [src]="'assets/imgs/tordo-fondo.png'" class="tordo-img"></ion-img>
   <ion-text>
     <h4>BENEFICIOS</h4>
-    <h5>DESDE LA MUNICIPALIDAD DE La calera PREMIAMOS TU 
-      COMPROMISO CON LOS SIGUIENTES BENEFICIOS EN LOS 
-      COMERCIOS PROMOTORES. Recordá que podrán pedirte
-      Tu DNI para validar tu identidad.</h5>
+    <h5>Desde la Municipalidad de La Calera premiamos tu compromiso
+      con los siguientes beneficios en los comercios promotores. 
+      Recordá que podrán pedirte tu DNI para validar tu identidad.</h5>
   </ion-text>
-  <ion-row>
+  <ion-row class="list-row" *ngFor="let item of data.stores | keyvalue">
     <ion-col class="store-label" size="4">
-      <ion-icon name="pricetag"></ion-icon>
-      <ion-label>GASTRONOMÍA</ion-label>
-      <ion-img [src]="'assets/imgs/mesita.png'" ng-Click="nextPage()"></ion-img>    
+      <ion-icon name="pricetag" class="pricetag"></ion-icon>
+      <ion-label>{{ item.value.category.name }}</ion-label>
+      <ion-img [src]="'assets/imgs/mesita.png'" (click)="goToStoreById(item.value.id)"></ion-img>    
     </ion-col>
-    <ion-col class="store-desc" size="8">
-      <h1>RESTAURANTE 1</h1>
-      <h2>LUNES A JUEVES 20% DE 
-        DESCUENTO </h2>
+    <ion-col class="store-desc" size="8" (click)="goToStoreById(item.value.id)">
+      <h1>{{ item.value.name }}</h1>
+    <hr>
+      <h2>{{ item.value.benefit.name }}</h2>
     </ion-col>
   </ion-row>
 </ion-content>

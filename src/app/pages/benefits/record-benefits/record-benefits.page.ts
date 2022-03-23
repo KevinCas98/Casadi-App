@@ -21,7 +21,7 @@ export class RecordBenefitsPage implements OnInit {
   }
 
   private listBenefits(){
-    this.results = this.benefitsService.getListBenefitsByUser(6);  
+    this.results = this.benefitsService.getListBenefitsByUser(3);  
     this.results.subscribe((response) => {
       this.data = response;
     });
