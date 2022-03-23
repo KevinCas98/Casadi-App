@@ -67,11 +67,14 @@ h2 {
     color: #05253b;
     font-size: 14px;
     display: inline-block;
-    margin-left: 8px;
     text-transform: uppercase;
     margin: 7px 0px 7px 10px;
 }
 
 .pinButton {
-    margin: 10px 25px 10px 25px;
+    color: #ffffff;
+    margin: 10px 55px 10px 55px;
+    --background: #05253b;
+    font-weight: bold;
+    letter-spacing: 1.8px;
 }
