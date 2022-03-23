@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StoresService } from '../../services/api/stores/stores.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { GlobalCommon } from '../../commons/global/global.commons';
 
 @Component({
   selector: 'app-tab2',
@@ -12,11 +13,15 @@ export class Tab2Page {
  
   results: Observable<any>;
   data: any[] = [];
+  urlWeb: string;
 
-  constructor(private storesService: StoresService, private route: Router) {
+  constructor(private storesService: StoresService,   
+              private route: Router,
+              private globalCommon: GlobalCommon) {
    }
 
   ngOnInit() {
+    this.urlWeb = this.globalCommon.getBaseWebUrl();
     this.data = [];
     this.listStores();
   }
