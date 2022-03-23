@@ -32,7 +32,7 @@
   </ion-text>
   <ion-row class="list-row" *ngFor="let item of data.stores | keyvalue">
     <ion-col class="store-label" size="4">
-      <ion-icon name="pricetag"></ion-icon>
+      <ion-icon name="pricetag" class="pricetag"></ion-icon>
       <ion-label>{{ item.value.category.name }}</ion-label>
       <ion-img [src]="'assets/imgs/mesita.png'" (click)="goToStoreById(item.value.id)"></ion-img>    
     </ion-col>

@@ -80,8 +80,10 @@ hr {
     margin-bottom: 1px;
 }
 
-.store-label ion-icon {
+.pricetag {
     color: #a9bf59;
+    transform: rotateY(180deg);
+    font-size: 12px;
 }
 
 .store-label ion-label {
