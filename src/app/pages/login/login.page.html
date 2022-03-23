@@ -7,19 +7,32 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form>
+  <form [formGroup]="loginData" (ngSubmit)="loginForm()" novalidate>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" formControlName="email" required></ion-input>
     </ion-item>
+    <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      * El campo es requerido
+    </small>
+    <!--question mark(?) is a safe navigation operator -->
+    <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      * El email no es valido
+    </small>
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" formControlName="password" required></ion-input>
     </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+      * El campo es requerido
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.pattern">
+      * La contraseña no es valido
+    </span>
     <ion-row>
       <ion-col>
-        <ion-button [routerLink]="['/tabs']" type="submit" color="danger" expand="block">Iniciar Sesión</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">¿Olvidaste tu contraseña?</a>
+        <ion-button type="submit" color="danger" expand="block">Iniciar Sesión</ion-button>
+        <!--<a [routerLink]="['/forgot-password']" class="small-text">¿Olvidaste tu contraseña?</a>-->
       </ion-col>
     </ion-row>
   </form>
