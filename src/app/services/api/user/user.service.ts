@@ -20,4 +20,8 @@ export class UserService {
     return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/register', formData)
   }
 
+  public loginUser(formData: FormData):Observable<any>{
+    return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/login', formData)
+  }
+
 }

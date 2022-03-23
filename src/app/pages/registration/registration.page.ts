@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../../services/api/user/user.service';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-registration',
