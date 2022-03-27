@@ -1,10 +1,31 @@
 ion-content {
     background-color: #05253b;
     margin-bottom: 55px;
+    height: 100%;
+    display: flex;
 }
 
 ion-list {
     background-color: #05253b;
+}
+
+ion-icon {
+    color: #ffffff;
+}
+
+ion-item {
+    margin-top: 15px;
+    --ion-background-color: #05253b;
+    border-bottom: 1.5px solid #a9bf59;
+}
+
+ion-input {
+    background-color: #05253b;
+    color: #ffffff;
+}
+
+ion-row {
+    margin-top: 35px;
 }
 
 .header-img {
@@ -14,6 +35,77 @@ ion-list {
     display: block;
 }
 
-ion-icon {
+.split {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.top {
+    color: white;
+    background-color: rgb(5, 37, 59);
+    left:0;
+    height: 45%;
+    width: 100%;
+}
+
+.bottom {
+    color: rgb(5, 37, 59);
+    background-color: white;
+    left:0;
+    top: 45%;
+    height: 55%;
+    width: 100%;
+}
+
+.top-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-centered {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+}
+
+#sendButton {
+    --background: #a9bf59;
+    color: #000000;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#carnetButton {
+    background-color: #05253b;
+    text-decoration: underline;
     color: #ffffff;
+}
+
+#abortButton {
+    background-color: #05253b;
+    text-decoration: underline;
+    color: #a9bf59;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    padding: 10px 10px 10px 10px;
+}
+
+h3 {
+    font-size: 14px;
+    letter-spacing: 1.7px;
 }
