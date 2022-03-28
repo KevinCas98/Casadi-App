@@ -1,4 +1,4 @@
-<div class="header-section">
+<!-- <div class="header-section">
   <ion-header slot="start" [translucent]="true">
     <ion-toolbar>
       <ion-grid>
@@ -15,22 +15,43 @@
       </ion-grid>
     </ion-toolbar>
   </ion-header>
-</div>
+</div> -->
 
 <ion-content>
-  <form [formGroup]="benefitData" (ngSubmit)="sendBenefitTake()" novalidate>
-    <ion-item lines="full">
-      <ion-label position="floating">PIN</ion-label>
-      <ion-input type="text" formControlName="pin" required></ion-input>
-    </ion-item>
-    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pin.errors?.required">
-      El pin es requerido
-    </span>
-    <small class="error ion-padding" *ngIf="isSubmitted && msj">{{ msjText }}</small>
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Enviar</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+  <div class="split top">
+    <form class="top-centered" [formGroup]="benefitData" (ngSubmit)="sendBenefitTake()" novalidate>
+      <ion-text>
+        <h3>INGRSÁ EL PIN<br> DE TU COMERCIO</h3>
+      </ion-text>
+      <ion-item lines="none">
+        <ion-input inputmode="numeric" type="text" formControlName="pin" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.pin.errors?.required">
+        El pin es requerido
+      </span>
+      <small class="error ion-padding" *ngIf="isSubmitted && msj">{{ msjText }}</small>
+      <ion-row>
+        <ion-col>
+          <ion-button id="sendButton" type="submit" shape="round" expand="block">VALIDAR</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button id="carnetButton" fill="clear" expand="block">VER CARNET DEL USUARIO</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button id="abortButton" fill="clear" expand="block">CANCELAR</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+  <div class="split bottom">
+    <ion-text class="bottom-centered">
+      <h1>CARGA DE PIN</h1>
+      <h2>/ Este espacio está previsto para que 
+        el personal del comercio promotor, 
+        ingrese su PIN para validar tu 
+        beneficio.<br>
+        / Simplemente deberás mostrarle tu 
+        celular para que lo cargue.</h2>
+    </ion-text>
+  </div>
 </ion-content>
