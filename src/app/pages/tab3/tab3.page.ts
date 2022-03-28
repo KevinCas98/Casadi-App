@@ -34,12 +34,30 @@ export class Tab3Page {
         );
       });
       this.userData = this.formBuilder.group({
-        name: ['', [Validators.required]],
-        last_name: ['', [Validators.required]],
+        sex: [''],
+        dateOfBirth: ['', [Validators.required]],
         dni: ['', [Validators.required]],
-        email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-        password: ['', [Validators.minLength(8), Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]]
+        contact: ['', [Validators.required]],
+        city: ['', [Validators.required]],
+        province: ['', [Validators.required]],
+        profileImg: ['']
       })
+    }
+
+    get errorControl() {
+      return this.userData.controls;
+    }
+    
+    async uploadFile(event) {
+      const file = (event.target as HTMLInputElement).files[0];
+      this.userData.patchValue({
+        profileImg: file
+      });
+      this.userData.get('profileImg').updateValueAndValidity()
+    }
+
+    private profileForm(){
+
     }
 
 }
