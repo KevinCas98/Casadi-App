@@ -24,4 +24,8 @@ export class UserService {
     return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/login', formData)
   }
 
+  public getUserByToken(token: string){
+      return this.http.get<{ data: any }>(this.global.getBaseApiUrl()+'users/view?type_by=token&token='+token)
+  }
+
 }
