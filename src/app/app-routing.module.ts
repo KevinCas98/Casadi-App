@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'carnet-load',
-    loadChildren: () => import('./pages/carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
+    loadChildren: () => import('./pages/users/carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
   },
   {
     path: 'stores-list',
@@ -54,7 +54,11 @@ const routes: Routes = [
   {
     path: 'benefits-take/:store/:benefit',
     loadChildren: () => import('./pages/benefits/take/take.module').then( m => m.TakePageModule)
+  },  {
+    path: 'carnet',
+    loadChildren: () => import('./pages/users/carnet/carnet.module').then( m => m.CarnetPageModule)
   },
+
 ];
 @NgModule({
   imports: [
