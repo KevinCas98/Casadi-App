@@ -28,4 +28,8 @@ export class UserService {
       return this.http.get<{ data: any }>(this.global.getBaseApiUrl()+'users/view?type_by=token&token='+token)
   }
 
+  public profileUser(formData: FormData):Observable<any>{
+    return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/update', formData)
+  }
+
 }
