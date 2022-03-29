@@ -49,13 +49,17 @@ ion-icon {
   font-size: 11px;
   color: red;
 }
+
+ion-item {
+  border: 1.5px solid #05253b;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+}
+
 ion-select {
   color: #545ca7;
   --placeholder-color: #000000;
   --placeholder-opacity: 1;
-}
-
-ion-select {
   width: 100%;
   justify-content: center;
 }
@@ -66,12 +70,12 @@ ion-select::part(text) {
 }
 
 ion-select::part(placeholder) {
-  color: #000000c4;
+  color: #000000;
   opacity: 1;
 }
 
 ion-select::part(placeholder)::first-letter {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
 }
 
