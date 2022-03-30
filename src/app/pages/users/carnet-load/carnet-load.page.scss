@@ -13,11 +13,19 @@ ion-label {
     margin-bottom: 5px;
 }
 
+ion-fab {
+    position: absolute;
+    bottom: 9%;
+    right: 9%;
+    
+    ion-fab-button {
+        --background: #05253b;
+    }
+}
+
+
+
 #enviar {
     margin-left: 10%;
     margin-right: 10%;
 }
-
-// ion-list {
-//     display: none;
-// }

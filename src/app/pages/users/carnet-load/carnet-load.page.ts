@@ -7,17 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarnetLoadPage implements OnInit {
 
+  public isShow = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  isShow = false;
-  
   toggleDisplay() {
     this.isShow = !this.isShow;
   }
-
 
   loadImageFromDevice(event) {
 
