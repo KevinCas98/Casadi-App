@@ -64,7 +64,7 @@ export class Tab3Page {
             this.userData.get("last_name").setValue(response["user"][response["user"]["id"]]["lastName"]);
             this.userData.get("token").setValue(response["user"][response["user"]["id"]]["token"]);
             this.userData.get("id").setValue(response["user"]["id"]);
-            this.userData.get("img_hidden").setValue(response["user"][response["user"]["id"]]["img_hidden"]);
+            this.userData.get("img_hidden").setValue(response["user"][response["user"]["id"]]["profileImg"]);
             this.userData.get("sex").setValue(response["user"][response["user"]["id"]]["sex"]);
             this.userData.get("dateOfBirth").setValue(response["user"][response["user"]["id"]]["dateOfBirth"]);
             this.userData.get("dni").setValue(response["user"][response["user"]["id"]]["dni"]);

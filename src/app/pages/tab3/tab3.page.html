@@ -39,12 +39,6 @@
       <ion-item lines="full">
         <input type="file" name="file" (change)="uploadFile($event)">
       </ion-item>
-      <ion-item lines="none">
-        <ion-input type="text" formControlName="name" placeholder="NOMBRE" required></ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-input type="text" formControlName="last_name" placeholder="APELLIDO" required></ion-input>
-      </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dni.errors?.required">
         * El campo es requerido
       </span>
@@ -60,12 +54,6 @@
         <ion-input type="text" formControlName="dateOfBirth" required></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dateOfBirth.errors?.required">
-        * El campo es requerido
-      </span>
-      <ion-item lines="none">
-        <ion-input type="text" formControlName="dni" placeholder="DNI" required></ion-input>
-      </ion-item>
-      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dni.errors?.required">
         * El campo es requerido
       </span>
       <ion-item lines="none">
