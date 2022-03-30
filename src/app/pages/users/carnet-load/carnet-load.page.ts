@@ -7,15 +7,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarnetLoadPage implements OnInit {
 
-  public isShow = false;
-
+  public isShown1: boolean = false;
+  public isShown2: boolean = true;
+  public isShown3: boolean = true;
+  public isShown4: boolean = true;
+  public idButton: number = 2;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggleDisplay() {
-    this.isShow = !this.isShow;
+  async toggleDisplay(idButton:number) {
+
+    console.log(idButton);
+    
+    switch (idButton) {
+      case 2:
+        this.isShown2 = false;
+        this.idButton++;
+          console.log("Segundo Boton");
+          break;
+      case 3:
+          this.isShown3 = false;
+          this.idButton++;
+          console.log("Tercer Boton");
+          break;
+      case 4:
+          this.isShown4 = false;
+          this.idButton++;
+          console.log("Cuarto Boton");
+          break;
+    }
+    
   }
 
   loadImageFromDevice(event) {
