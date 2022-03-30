@@ -32,7 +32,7 @@
       <ion-select-option value="f">FISICO</ion-select-option>
       <ion-select-option value="d">DIGITAL</ion-select-option>
     </ion-select>
-    <ion-list lines="none">
+    <ion-list [hidden]="isShow" lines="none">
       <ion-item>
         <ion-button id="stButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
@@ -63,7 +63,7 @@
       </ion-item>
     </ion-list>
   </form>
-  <ion-fab edge="true" vertical="bottom" horizontal="end" slot="absolute">
+  <ion-fab (click) = toggleDisplay()>
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

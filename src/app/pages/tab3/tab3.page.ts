@@ -12,8 +12,8 @@ import { GlobalCommon } from '../../commons/global/global.commons';
 })
 export class Tab3Page {
 
-  private userData : FormGroup;
-  private data: any[] = [];
+  public userData : FormGroup;
+  public data: any[] = [];
   isSubmitted = false;
   public msj: boolean;
   public msjText: string;

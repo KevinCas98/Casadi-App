@@ -36,13 +36,6 @@
     <ion-button id="record-benefits" [routerLink]="['/record-benefits']" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
     <form [formGroup]="userData" (ngSubmit)="profileForm()" novalidate id="profile-form">
       <small class="error ion-padding" *ngIf="msj">{{ msjText }}</small>
-<<<<<<< HEAD
-      <ion-item lines="none">
-        <input type="file" name="file" (change)="uploadFile($event)">
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label position="floating">GÉNERO</ion-label>
-=======
       <ion-item lines="full">
         <input type="file" name="file" (change)="uploadFile($event)">
       </ion-item>
@@ -62,7 +55,6 @@
       </span>
       <ion-item lines="full">
         <ion-label position="floating">Genero</ion-label>
->>>>>>> 543234ce2d96ccffb1304adbd14f282b0cf44baa
         <ion-select formControlName="sex">
           <ion-select-option value="F">Femenino</ion-select-option>
           <ion-select-option value="M">Masculino</ion-select-option>

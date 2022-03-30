@@ -12,6 +12,13 @@ export class CarnetLoadPage implements OnInit {
   ngOnInit() {
   }
 
+  isShow = false;
+  
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
+
+
   loadImageFromDevice(event) {
 
     const file = event.target.files[0];
