@@ -26,7 +26,7 @@
   <div id="profile">
     <p id="title">PERFIL</p>
     <ion-avatar id="avatar">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      <img src='{{urlWeb}}users/{{data.id}}/{{data.profileImg}}'/>
     </ion-avatar>
     <ion-text>
       <h5 id="name">Gemma Perona</h5>
@@ -36,11 +36,33 @@
     <ion-button id="record-benefits" [routerLink]="['/record-benefits']" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
     <form [formGroup]="userData" (ngSubmit)="profileForm()" novalidate id="profile-form">
       <small class="error ion-padding" *ngIf="msj">{{ msjText }}</small>
+<<<<<<< HEAD
       <ion-item lines="none">
         <input type="file" name="file" (change)="uploadFile($event)">
       </ion-item>
       <ion-item lines="none">
         <ion-label position="floating">GÉNERO</ion-label>
+=======
+      <ion-item lines="full">
+        <input type="file" name="file" (change)="uploadFile($event)">
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="name" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+        * El campo es requerido
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" formControlName="last_name" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.last_name.errors?.required">
+        * El campo es requerido
+      </span>
+      <ion-item lines="full">
+        <ion-label position="floating">Genero</ion-label>
+>>>>>>> 543234ce2d96ccffb1304adbd14f282b0cf44baa
         <ion-select formControlName="sex">
           <ion-select-option value="F">Femenino</ion-select-option>
           <ion-select-option value="M">Masculino</ion-select-option>
@@ -49,7 +71,7 @@
       </ion-item>
       <ion-item lines="none">
         <ion-label>FECHA DE NACIMIENTO</ion-label>
-        <ion-input type="date" formControlName="dateOfBirth" required></ion-input>
+        <ion-input type="text" formControlName="dateOfBirth" required></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dateOfBirth.errors?.required">
         * El campo es requerido
