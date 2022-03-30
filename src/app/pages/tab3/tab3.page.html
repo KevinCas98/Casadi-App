@@ -35,6 +35,7 @@
     <ion-button id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
     <ion-button id="record-benefits" [routerLink]="['/record-benefits']" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
     <form [formGroup]="userData" (ngSubmit)="profileForm()" novalidate id="profile-form">
+      <small class="error ion-padding" *ngIf="msj">{{ msjText }}</small>
       <ion-item lines="none">
         <input type="file" name="file" (change)="uploadFile($event)">
       </ion-item>
