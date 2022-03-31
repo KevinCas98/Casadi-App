@@ -1,48 +1,49 @@
 ion-img {
-    height: auto;
-    width: auto;
-    margin: auto;
-    display: block;
+  height: auto;
+  width: auto;
+  margin: auto;
+  display: block;
 }
 
 ion-icon {
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
- ion-content {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+ion-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
+
 #profile {
-    margin: auto;
-    width: auto;
-    padding: 20px;
-    margin-bottom: 55px;
+  margin: auto;
+  width: auto;
+  padding: 20px;
+  margin-bottom: 80px;
 }
 
 #carnet-load {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 #record-benefits {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 #profile-form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #avatar {
-    margin: auto;
+  margin: auto;
 }
 
 #title {
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: rgb(235, 94, 108);
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgb(235, 94, 108);
 }
 
 .error{
@@ -87,6 +88,7 @@ ion-select::part(icon) {
   color: #971e49;
   opacity: 1;
 }
+
 
 #name {
   font-weight: bold;
