@@ -13,6 +13,7 @@ export class RecordBenefitsPage implements OnInit {
   results: Observable<any>;
   data: any[] = [];
 
+
   constructor(private route: Router, private benefitsService: BenefitsService) { }
 
   ngOnInit() {

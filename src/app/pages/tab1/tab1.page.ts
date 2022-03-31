@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/api/user/user.service';
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,15 +10,23 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
-  // changeEvent(event) {
-  //   console.log("event.target.value",event);
-  //   if(event.checked){
-  //      this.checkedbtn = false;
-  //      console.log("checkedbtn value",this.checkedbtn);
-  //   }else{
-  //      this.checkedbtn = true;
-  //   }        
-  //  }
+  public checked: number;
+
+  constructor( 
+    private userService: UserService,
+    public storage: Storage
+  ) {}
+
+  ngOnInit () {
+    this.storage.create();
+    this.storage.get("token").then(token=>{
+      this.userService.getUserByToken(token).subscribe(
+        (response) => {
+          this.checked = response["user"][response["user"]["id"]]["checked"];
+        } 
+      );
+    });
+  }
+
 
 }

@@ -10,7 +10,25 @@
     'carnet-background-orange': carnetState === 1,
     'carnet-background-blue': carnetState === 2,
     'carnet-background-green': carnetState === 3
-  }" >
+  }">
+    <ion-card>
+      <ion-card-content>
+        <ion-text *ngIf="carnetState == 0">NO TIENES
+          CARGADO 
+         TU CERTIFICADO
+         DE VACUNACIÓN</ion-text>
+         <ion-text *ngIf="carnetState == 1">
+          ESQUEMA DE
+          VACUNACIÓN
+          INCOMPLETO
+         </ion-text>
+         <ion-text *ngIf="carnetState == 2">
+          EN
+          ESPERA DE
+          APROBACIÓN
+         </ion-text>
+      </ion-card-content>
+    </ion-card>
     <ion-card class="data">
       <ion-card-content>
         <ion-text>
@@ -18,6 +36,9 @@
           <h2>PERONA, GEMMA</h2>
           <h1>DOCUMENTO</h1>
           <h2>40.835.255</h2>
+          <h1 *ngIf="carnetState == 1">DOSIS</h1>
+          <h2 *ngIf="carnetState == 1">1 (UNA) SPUTNIK</h2>
+          <h2 *ngIf="" ></h2>
         </ion-text>
         <ion-button *ngIf="carnetState == 0" color="danger" shape="round">CARGAR CERTIFICADO</ion-button>
       </ion-card-content>
@@ -28,6 +49,6 @@
 
 <ion-footer *ngIf="carnetState < 3" class="ion-no-border">
   <ion-toolbar class="footer">
-    <h3>¿POR QUE VACUNARME?</h3>
+    <ion-button href="information" class="info-button" fill="clear" expand="block" shape="round">¿POR QUE VACUNARME?</ion-button>
   </ion-toolbar>
 </ion-footer>
