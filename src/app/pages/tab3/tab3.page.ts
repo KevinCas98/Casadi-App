@@ -114,7 +114,7 @@ export class Tab3Page {
                 if(response["success"]){
                   this.storage.create();
                   this.storage.set("profile", true);
-                  this.route.navigate([encodeURI("tabs/profile")], { queryParams: { success: '1' } });
+                  this.route.navigate([encodeURI("tabs/profile_success")], { queryParams: { success: '1' } });
                 }else{
                   this.msj = true;
                   this.msjText = response["msj"];
