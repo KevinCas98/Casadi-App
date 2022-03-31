@@ -4,7 +4,7 @@
       <ion-grid>
         <ion-row size="12" class="ion-text-center ion-align-items-center">
           <ion-col size="3" class="ion-text-start">
-            <ion-back-button defaultHref="tabs/tab3"></ion-back-button>
+            <ion-back-button defaultHref="tabs/profile"></ion-back-button>
           </ion-col>
           <ion-col size="6">
             <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
@@ -33,28 +33,28 @@
       <ion-select-option value="d">DIGITAL</ion-select-option>
     </ion-select>
     <ion-list lines="none">
-      <ion-item>
-        <ion-button id="stButton" expand="block">
+      <ion-item [hidden]="isShown1">
+        <ion-button  id="stButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-item>
-      <ion-item>
+      <ion-item [hidden]="isShown2">
         <ion-button id="ndButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-item>
-      <ion-item>
+      <ion-item [hidden]="isShown3">
         <ion-button id="rdButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
             accept="image/png, image/jpeg">
         </ion-button>
       </ion-item>
-      <ion-item>
+      <ion-item [hidden]="isShown4">
         <ion-button id="thButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
           <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
@@ -63,7 +63,7 @@
       </ion-item>
     </ion-list>
   </form>
-  <ion-fab edge="true" vertical="bottom" horizontal="end" slot="absolute">
+  <ion-fab *ngIf="idButton < 5" (click) = "toggleDisplay(idButton)">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

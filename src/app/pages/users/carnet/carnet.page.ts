@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarnetPage implements OnInit {
 
+  public carnetState: number = 0;
+
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

@@ -21,8 +21,35 @@ ion-card {
 }
 
 // card del estado del carnet
-.carnet {
+.carnet-background-red {
     background-image: url(/assets/cards/csdRed.png);
+    background-size: 95%;
+    height: 95%;
+    width: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carnet-background-orange {
+    background-image: url(/assets/cards/csdOrange.png);
+    background-size: 95%;
+    height: 95%;
+    width: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carnet-background-green {
+    background-image: url(/assets/cards/csdGreen.png);
+    background-size: 95%;
+    height: 95%;
+    width: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carnet-background-blue {
+    background-image: url(/assets/cards/csdBlue.png);
     background-size: 95%;
     height: 95%;
     width: 95%;
