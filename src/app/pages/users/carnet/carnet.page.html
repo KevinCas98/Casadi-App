@@ -8,21 +8,21 @@
   <ion-card [ngClass]="{
     'carnet-background-red': carnetState === 0,
     'carnet-background-orange': carnetState === 1,
-    'carnet-background-blue': carnetState === 2,
-    'carnet-background-green': carnetState === 3
+    'carnet-background-green': carnetState === 2,
+    'carnet-background-blue': carnetState === 3
   }">
-    <ion-card>
+    <ion-card class="textCard">
       <ion-card-content>
-        <ion-text *ngIf="carnetState == 0">NO TIENES
+        <ion-text *ngIf="carnetState == 0" class="loadCarnet" >NO TIENES
           CARGADO 
          TU CERTIFICADO
          DE VACUNACIÓN</ion-text>
-         <ion-text *ngIf="carnetState == 1">
+         <ion-text *ngIf="carnetState == 1" class="carnetIncomplete" >
           ESQUEMA DE
           VACUNACIÓN
           INCOMPLETO
          </ion-text>
-         <ion-text *ngIf="carnetState == 2">
+         <ion-text *ngIf="carnetState == 3" class="carnetOnAproval" >
           EN
           ESPERA DE
           APROBACIÓN
@@ -33,14 +33,13 @@
       <ion-card-content>
         <ion-text>
           <h1>APELLIDO Y NOMBRE</h1>
-          <h2>PERONA, GEMMA</h2>
+          <h2>{{data.lastName}}, {{data.name}}</h2>
           <h1>DOCUMENTO</h1>
-          <h2>40.835.255</h2>
-          <h1 *ngIf="carnetState == 1">DOSIS</h1>
-          <h2 *ngIf="carnetState == 1">1 (UNA) SPUTNIK</h2>
-          <h2 *ngIf="" ></h2>
+          <h2>{{data.dni}}</h2>
+          <h1 *ngIf="carnetState > 1">DOSIS</h1>
+          <h4 *ngIf="carnetState > 1">{{data.doseQuantity}} ({{data.doseQuantity}}) SPUTNIK / SPUTNIK<br>SPUTNIK / SPUTNIK </h4>
         </ion-text>
-        <ion-button *ngIf="carnetState == 0" color="danger" shape="round">CARGAR CERTIFICADO</ion-button>
+        <ion-button *ngIf="carnetState == 0" href="carnet-load" color="danger" shape="round">CARGAR CERTIFICADO</ion-button>
       </ion-card-content>
     </ion-card>
     <ion-img [src]="'/assets/imgs/qrExample.png'" class="qr"></ion-img>
