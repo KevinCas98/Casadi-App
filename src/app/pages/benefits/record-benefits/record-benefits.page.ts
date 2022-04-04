@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BenefitsService } from '../../../services/api/benefits/benefits.service';
 import { Observable } from 'rxjs';
+import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +15,7 @@ export class RecordBenefitsPage implements OnInit {
   data: any[] = [];
 
 
-  constructor(private route: Router, private benefitsService: BenefitsService) { }
+  constructor(private route: Router, private benefitsService: BenefitsService, public storage: Storage) { }
 
   ngOnInit() {
     this.data = [];
@@ -22,10 +23,14 @@ export class RecordBenefitsPage implements OnInit {
   }
 
   private listBenefits(){
-    this.results = this.benefitsService.getListBenefitsByUser(3);  
-    this.results.subscribe((response) => {
-      this.data = response;
+    this.storage.create();
+    this.storage.get("id").then(id=>{
+      this.results = this.benefitsService.getListBenefitsByUser(id);  
+      this.results.subscribe((response) => {
+        this.data = response;
+      });
     });
   }
+
 
 }
