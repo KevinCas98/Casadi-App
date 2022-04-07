@@ -18,9 +18,9 @@
 </div>
 
 <ion-content [fullscreen]="true">
-  <form>
+  <form [formGroup]="userData" (ngSubmit)="carnetLoadForm()" novalidate id="carnet-load-form">
     <ion-label>DOSIS</ion-label>
-    <ion-select interface="popover" placeholder="Elija una">
+    <ion-select  formControlName="dose_quantity" interface="popover" placeholder="Elija una">
       <ion-select-option value="1">PRIMERA</ion-select-option>
       <ion-select-option value="2">SEGUNDA</ion-select-option>
       <ion-select-option value="3">TERCERA</ion-select-option>
@@ -28,7 +28,7 @@
     </ion-select>
     <ion-item lines="none"><ion-label></ion-label></ion-item>
     <ion-label>TIPO DE CARNET</ion-label>
-    <ion-select interface="popover" placeholder="Elija uno">
+    <ion-select formControlName="type_Of_card" interface="popover" placeholder="Elija uno">
       <ion-select-option value="f">FISICO</ion-select-option>
       <ion-select-option value="d">DIGITAL</ion-select-option>
     </ion-select>
@@ -36,37 +36,33 @@
       <ion-item [hidden]="isShown1">
         <ion-button  id="stButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
-          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
-            accept="image/png, image/jpeg">
+          <input type="file" (change)="uploadFile1($event)" id="file-input-1">
         </ion-button>
       </ion-item>
       <ion-item [hidden]="isShown2">
         <ion-button id="ndButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
-          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
-            accept="image/png, image/jpeg">
+          <input type="file" (change)="uploadFile2($event)" id="file-input-2">
         </ion-button>
       </ion-item>
       <ion-item [hidden]="isShown3">
         <ion-button id="rdButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
-          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
-            accept="image/png, image/jpeg">
+          <input type="file" (change)="uploadFile3($event)" id="file-input-3">
         </ion-button>
       </ion-item>
       <ion-item [hidden]="isShown4">
         <ion-button id="thButton" expand="block">
           <ion-icon lazy="true" slot="center" name="image"></ion-icon>
-          <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
-            accept="image/png, image/jpeg">
+          <input type="file" (change)="uploadFile4($event)" id="file-input-4">
         </ion-button>
       </ion-item>
     </ion-list>
+    <ion-button id="enviar" type="submit" expand="block" color="dark" fill="outline" shape="round">ENVIAR</ion-button>
   </form>
   <ion-fab *ngIf="idButton < 5" (click) = "toggleDisplay(idButton)">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-button id="enviar" type="submit" expand="block" color="dark" fill="outline" shape="round">ENVIAR</ion-button>
 </ion-content>
