@@ -25,14 +25,15 @@
 <ion-content [fullscreen]="true">
   <div id="profile">
     <p id="title">PERFIL</p>
-    <ion-avatar id="avatar">
+    <ion-avatar *ngIf="data.profileImg" id="avatar">
       <img src='{{urlWeb}}users/{{data.id}}/{{data.profileImg}}'/>
     </ion-avatar>
     <ion-text>
       <h5 id="name">{{data.name}} {{data.lastName}}</h5>
       <h5 id="dni">DNI: {{data.dni}}</h5>
     </ion-text>
-    <ion-button *ngIf="data.checked < 2" id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-button *ngIf="data.checked == 0" id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-button *ngIf="data.checked == 1" [routerLink]="['/carnet']" shape="round" color="warning">VERIFICANDO CERTIFICADO</ion-button>
     <ion-button *ngIf="data.checked == 2" id="carnet" [routerLink]="['/carnet']" shape="round" color="success">VER CARNET</ion-button>
     <ion-button id="record-benefits" [routerLink]="['/record-benefits']" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
     <form [formGroup]="userData" (ngSubmit)="profileForm()" novalidate id="profile-form">
@@ -58,7 +59,7 @@
       </ion-item>
       <ion-item lines="none">
         <ion-label>FECHA DE NACIMIENTO</ion-label>
-        <ion-input type="text" formControlName="dateOfBirth" required></ion-input>
+        <ion-input type="date" formControlName="dateOfBirth" required></ion-input>
       </ion-item>
       <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dateOfBirth.errors?.required">
         * El campo es requerido
