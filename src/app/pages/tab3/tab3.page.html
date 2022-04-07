@@ -32,7 +32,8 @@
       <h5 id="name">{{data.name}} {{data.lastName}}</h5>
       <h5 id="dni">DNI: {{data.dni}}</h5>
     </ion-text>
-    <ion-button id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-button *ngIf="data.checked < 2" id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-button *ngIf="data.checked == 2" id="carnet" [routerLink]="['/carnet']" shape="round" color="success">VER CARNET</ion-button>
     <ion-button id="record-benefits" [routerLink]="['/record-benefits']" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
     <form [formGroup]="userData" (ngSubmit)="profileForm()" novalidate id="profile-form">
       <small class="error ion-padding" *ngIf="msj">{{ msjText }}</small>
