@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StoresService } from '../../../services/api/stores/stores.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+import { UserService } from '../../../services/api/user/user.service';
 
 @Component({
   selector: 'app-view',
@@ -15,8 +17,10 @@ export class ViewPage implements OnInit {
   data: any[] = [];
   category: any[] = [];
   benefit: any[] = [];
-
-  constructor(private storesService: StoresService, private actRoute: ActivatedRoute, private route: Router) { 
+  public checked: number;
+  
+  constructor(private storesService: StoresService, private actRoute: ActivatedRoute, private route: Router, private userService: UserService,
+    public storage: Storage) { 
     this.id = this.actRoute.snapshot.params.id;
   }
 
@@ -25,6 +29,14 @@ export class ViewPage implements OnInit {
     this.category=[];
     this.benefit=[];
     this.getStoreById();
+    this.storage.create();
+    this.storage.get("token").then(token=>{
+      this.userService.getUserByToken(token).subscribe(
+        (response) => {
+          this.checked = response["user"][response["user"]["id"]]["checked"];
+        } 
+      );
+    });
   }
 
   public getStoreById(){
@@ -39,5 +51,7 @@ export class ViewPage implements OnInit {
   public goToTakeBenefits(idStore, idBenefits){
     this.route.navigate([encodeURI('/benefits-take/'+idStore+'/'+idBenefits)]);
   }
+
+
 
 }
