@@ -26,8 +26,8 @@
     siguientes BENEFICIOS:
   </p>
   <div style="padding-right: 35px; margin-bottom: 300px;" scrollY="true">
-    <ul class="list-group-flush" id="recordList" *ngFor="let item of data.record_benefits | keyvalue" style="margin-bottom: -35px;">
-      <li id="listItem" *ngIf='item.value.id>=0'>
+    <ul class="list-group-flush" id="recordList" style="margin-bottom: -35px;" *ngFor="let item of data.record_benefits | keyvalue">
+      <li id="listItem" *ngIf='item.value.id >= 0'>
           <ion-text>{{ item.value.dateRecord | date:'MM/YY' }}
           </ion-text> - Obtuviste un beneficio de <ion-text>{{ item.value.benefit.name }}</ion-text> 
           en <ion-text>{{ item.value.stores.name }}</ion-text>

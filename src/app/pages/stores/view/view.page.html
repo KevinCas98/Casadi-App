@@ -19,21 +19,6 @@
 
 <ion-content [fullscreen]="true">
   <img class="store-img" [src]="'assets/imgs/mesitaBanner.png'">
-  <!-- <ion-list>
-    <ion-item>
-      <ion-label (click)="goToTakeBenefits(data.id, benefit.id)">
-        <h2>{{ data.name }}</h2>
-        <h3>{{ data.id }}</h3>
-        <h3>{{ data.cuit }}</h3>
-        <h3>{{ category.id }}</h3>
-        <h3>{{ category.name }}</h3>
-        <h3>{{ benefit.id }}</h3>
-        <h3>{{ benefit.name }}</h3>
-        <h3>{{ benefit.pin }}</h3>
-        <h3>{{ benefit.conditions }}</h3>
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
   <ion-grid [fixed]="true">
     <ion-row size="12">
       <ion-col size="8" class="store-title"> 
@@ -62,22 +47,20 @@
 
   <h4>DIRECCIÓN/ES</h4>
   <hr>
-  <p style="text-transform: uppercase;">
-    <ion-icon id="locate" name="locate"></ion-icon><br>
-  </p>
+  <p style="text-transform: uppercase;">{{ data.address }}</p>
 
   <h4>¿CÓMO CANJEAR?</h4>
   <hr>
   <p>
-    EXISTEN DOS FORMAS DE CANJEAR LOS BENEFICIOS:<br>
-    / HACIENDO CLIC EN EL BOTÓN “UTILIZAR BENEFICIO”<br>
+    EXISTEN DOS FORMAS DE CANJEAR LOS BENEFICIOS:<br><br>
+    / HACIENDO CLIC EN EL BOTÓN “UTILIZAR BENEFICIO”<br><br>
     Para lo cual deberás solicitar al personal del comercio promotor
-    que ingrese su PIN para validar el beneficio.<br>
-    / PRESENTANDO EL CARNET SALUDABLE<br>
-    Ingresá desde el “Home” a tu carnet saludable y presentalo al
+    que ingrese su PIN para validar el beneficio.<br><br>
+    / PRESENTANDO EL CARNET SALUDABLE<br><br>
+    Ingresá desde el “ Home ” a tu carnet saludable y presentalo al
     personal del comercio promotor, quien lo escaneará para validar
     el beneficio.
-  </p>
+  </p><br>
   <h3>PODRÁN PEDIRTE TU DNI PARA VALIDAR TU IDENTIDAD.<br>
     PODRÁS CONSULTAR TUS MOVIMIENTOS EN<br>
     PERFIL - ÚLTIMOS MOVIMIENTOS.</h3>
