@@ -11,8 +11,8 @@ export class GlobalCommon {
 
 
   constructor() { 
-    this.baseAPiUrl = "https://seditlacalera.com.ar/casadi/api/";
-    this.baseWebUrl = "https://seditlacalera.com.ar/casadi/web/upload/";
+    this.baseAPiUrl = "https://localhost/casadi/api/";
+    this.baseWebUrl = "https://localhost/casadi/web/upload/";
   }
 
   public getBaseApiUrl(){
