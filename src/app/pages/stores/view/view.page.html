@@ -36,8 +36,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button *ngIf="checked == 2" id="carnet-load" [routerLink]="['/tabs/uploads']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
-  <ion-button *ngIf="checked == 1" expand="block" [routerLink]="['/carnet']" shape="round" color="warning">VERIFICANDO CERTIFICADO</ion-button>
+  <ion-button *ngIf="checked == 0" class="pinButton" [routerLink]="['/tabs/uploads']" expand="block"  shape="round" style="color: #ffffff; --background: #c60a0a;">CARGAR CERTIFICADO</ion-button>
+  <ion-button *ngIf="checked == 1" class="pinButton" [routerLink]="['/carnet']" expand="block"  shape="round" style="--background: #ff8900;">VERIFICANDO CERTIFICADO</ion-button>
   <ion-button *ngIf="checked == 2" expand="block" shape="round" class="pinButton" (click)="goToTakeBenefits(data.id, benefit.id)"> UTILIZAR BENEFICIO </ion-button>
   <h4>BENEFICIOS</h4>
   <hr>

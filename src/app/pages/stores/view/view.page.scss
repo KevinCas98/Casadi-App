@@ -26,13 +26,13 @@ ion-icon {
 .container{
     color: #ffffff;
     margin: 0px 0px 0px 17%;
-    width: 75%;
+    max-width: 80px;
     height: 100%;
     display: grid;
     grid-template-columns: 40px 40px;
     grid-template-rows: 40px 40px;
-    grid-column-gap: 1px;
-    grid-row-gap: 1px;
+    grid-column-gap: 1.5px;
+    grid-row-gap: 1.5px;
     background-color: #a9bf59;
 }
 
