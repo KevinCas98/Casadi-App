@@ -32,4 +32,8 @@ export class UserService {
     return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/update', formData)
   }
 
+  public carnetLoadUser(formData: FormData):Observable<any>{
+    return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/carnet', formData)
+  }
+
 }

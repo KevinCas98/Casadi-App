@@ -31,7 +31,7 @@
     </span>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" formControlName="email" required></ion-input>
+      <ion-input type="email" formControlName="email" required></ion-input>
     </ion-item>
     <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
       * El campo es requerido

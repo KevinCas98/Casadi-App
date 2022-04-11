@@ -88,37 +88,38 @@ export class Tab3Page {
     this.userData.get('profileImg').updateValueAndValidity()
   }
 
-  public profileForm(){
-      this.isSubmitted = true;
-      if (!this.userData.valid) {
-        console.log('Please provide all the required values!')
-        return false;
-      } else {
-        var formData: any = new FormData();
-          formData.append("name", this.userData.get("name").value);
-          formData.append("last_name", this.userData.get("last_name").value);
-          formData.append("dni", this.userData.get("dni").value);
-          formData.append("token", this.userData.get("token").value);
-          formData.append("id", this.userData.get("id").value);
-          formData.append("img_hidden", this.userData.get("img_hidden").value);
-          formData.append("sex", this.userData.get("sex").value);
-          formData.append("date_of_birth", this.userData.get("dateOfBirth").value);
-          formData.append("contact", this.userData.get("contact").value);
-          formData.append("city", this.userData.get("city").value);
-          formData.append("province", this.userData.get("province").value);
-          formData.append("profile_img", this.userData.get("profileImg").value);
-          
-          this.userService.profileUser(formData).subscribe(
-            (response) => {
-              if(response["success"]){
-                this.storage.create();
-                this.storage.set("profile", true);
-                this.route.navigate([encodeURI("tabs/profile")], { queryParams: { success: '1' } });
-              }else{
-                this.msj = true;
-                this.msjText = response["msj"];
+   public profileForm(){
+        this.isSubmitted = true;
+        if (!this.userData.valid) {
+          console.log('Please provide all the required values!')
+          return false;
+        } else {
+          var formData: any = new FormData();
+            formData.append("name", this.userData.get("name").value);
+            formData.append("last_name", this.userData.get("last_name").value);
+            formData.append("dni", this.userData.get("dni").value);
+            formData.append("token", this.userData.get("token").value);
+            formData.append("id", this.userData.get("id").value);
+            formData.append("img_hidden", this.userData.get("img_hidden").value);
+            formData.append("sex", this.userData.get("sex").value);
+            formData.append("date_of_birth", this.userData.get("dateOfBirth").value);
+            formData.append("contact", this.userData.get("contact").value);
+            formData.append("city", this.userData.get("city").value);
+            formData.append("province", this.userData.get("province").value);
+            formData.append("profile_img", this.userData.get("profileImg").value);
+            
+            this.userService.profileUser(formData).subscribe(
+              (response) => {
+                if(response["success"]){
+                  this.storage.create();
+                  this.storage.set("profile", true);
+                  this.route.navigate([encodeURI("tabs/profile_success")], { queryParams: { success: '1' } });
+                }else{
+                  this.msj = true;
+                  this.msjText = response["msj"];
+                }
+
               }
-            }
           );
       }
   }
