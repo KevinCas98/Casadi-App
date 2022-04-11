@@ -33,7 +33,6 @@ export class Tab3Page {
     this.urlWeb = this.globalCommon.getBaseWebUrl();
     this.actRoute.queryParams.subscribe(params => {
       if (params) {
-        console.log(params)
         if(params["success"]){
           this.msj = true;
           this.msjText = "Los datos se actualizaron con éxito";

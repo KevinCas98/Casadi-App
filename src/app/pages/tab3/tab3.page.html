@@ -26,6 +26,7 @@
   <div id="profile">
     <p id="title">PERFIL</p>
     <ion-avatar *ngIf="data.profileImg" id="avatar">
+      <ion-img [src]="urlWeb+'users/'+data.id+'/'+data.profileImg"></ion-img>
       <img src='{{urlWeb}}users/{{data.id}}/{{data.profileImg}}'/>
     </ion-avatar>
     <ion-text>
