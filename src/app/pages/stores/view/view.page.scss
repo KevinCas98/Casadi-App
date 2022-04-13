@@ -23,17 +23,17 @@ ion-icon {
     height: auto;
 }
 
-.container{
+.social {
     color: #ffffff;
-    margin: 0px 0px 0px 17%;
-    max-width: 80px;
+    // margin: 0px 0px 0px 17%;
+    max-width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 40px 40px;
     grid-template-rows: 40px 40px;
-    grid-column-gap: 1.5px;
-    grid-row-gap: 1.5px;
-    background-color: #a9bf59;
+    // grid-column-gap: 1.5px;
+    // grid-row-gap: 1.5px;
+    // background-color: #a9bf59;
 }
 
 .box{
