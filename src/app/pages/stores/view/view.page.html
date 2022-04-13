@@ -18,7 +18,7 @@
 </div>
 
 <ion-content [fullscreen]="true">
-  <img class="store-img" [src]="'assets/imgs/mesitaBanner.png'">
+  <img class="store-img" [src]="urlWeb+'stores/'+data.id+'/'+data.image2" [src]="'assets/imgs/mesitaBanner.png'">
   <ion-grid [fixed]="true">
     <ion-row size="12">
       <ion-col size="8" class="store-title"> 
@@ -37,9 +37,9 @@
     </ion-row>
   </ion-grid>
 
-  <ion-button *ngIf="checked == 0" class="pinButton" [routerLink]="['/tabs/uploads']" expand="block"  shape="round" style="color: #ffffff; --background: #c60a0a;">CARGAR CERTIFICADO</ion-button>
+  <ion-button *ngIf="checked == 0" class="pinButton" [routerLink]="['/tabs/profile']" expand="block"  shape="round" style="color: #ffffff; --background: #c60a0a;">CARGAR CERTIFICADO</ion-button>
   <ion-button *ngIf="checked == 1" class="pinButton" [routerLink]="['/carnet']" expand="block"  shape="round" style="--background: #ff8900;">VERIFICANDO CERTIFICADO</ion-button>
-  
+
   <ion-button *ngIf="checked == 2" expand="block" shape="round" class="pinButton" (click)="goToTakeBenefits(data.id, benefit.id)"> UTILIZAR BENEFICIO </ion-button>
   <h4>BENEFICIOS</h4>
   <hr>

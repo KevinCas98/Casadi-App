@@ -17,7 +17,15 @@ export class Tab1Page {
     public storage: Storage
   ) {}
 
-  ngOnInit () {
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  ionViewWillLeave() {
+    this.reloadData();
+  }
+
+  public reloadData(){
     this.storage.create();
     this.storage.get("token").then(token=>{
       this.userService.getUserByToken(token).subscribe(
@@ -27,6 +35,5 @@ export class Tab1Page {
       );
     });
   }
-
 
 }
