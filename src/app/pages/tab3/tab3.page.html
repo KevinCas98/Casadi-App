@@ -12,8 +12,8 @@
             <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
           </ion-col>
           <ion-col size="3" class="ion-text-end">
-            <ion-button fill="clear" shape="round">
-              <ion-icon name="power" size="large"></ion-icon>
+            <ion-button fill="clear" shape="round" (click)="logout()">
+              <ion-icon name="log-out" size="large"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -26,7 +26,7 @@
   <div id="profile">
     <p id="title">PERFIL</p>
     <ion-avatar *ngIf="data.profileImg" id="avatar">
-      <img src='{{urlWeb}}users/{{data.id}}/{{data.profileImg}}'/>
+      <ion-img [src]="urlWeb+'users/'+data.id+'/'+data.profileImg"></ion-img>
     </ion-avatar>
     <ion-text>
       <h5 id="name">{{data.name}} {{data.lastName}}</h5>

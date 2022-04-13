@@ -15,7 +15,7 @@ export class Tab3Page {
   public userData : FormGroup;
   public data: any[] = [];
   isSubmitted = false;
-  public msj: boolean;
+  public msj: any;
   public msjText: string;
   public success: number;
   public urlWeb: string;
@@ -28,14 +28,21 @@ export class Tab3Page {
     public storage: Storage) {}
 
   ngOnInit() {
+    this.reloadData();
+  }
+
+  ionViewWillLeave() {
+    this.reloadData();
+  }
+
+  public reloadData(){
     this.msj = false;
     this.msjText = "";
     this.urlWeb = this.globalCommon.getBaseWebUrl();
     this.actRoute.queryParams.subscribe(params => {
       if (params) {
-        console.log(params)
         if(params["success"]){
-          this.msj = true;
+          this.msj = params["success"];
           this.msjText = "Los datos se actualizaron con éxito";
         }
       }
@@ -111,9 +118,12 @@ export class Tab3Page {
             this.userService.profileUser(formData).subscribe(
               (response) => {
                 if(response["success"]){
-                  this.storage.create();
                   this.storage.set("profile", true);
-                  this.route.navigate([encodeURI("tabs/profile_success")], { queryParams: { success: '1' } });
+                  if(this.msj==1){
+                    this.route.navigate([encodeURI("tabs/profile")], { queryParams: { success: '2' } });
+                  }else{
+                    this.route.navigate([encodeURI("tabs/profile_success")], { queryParams: { success: '1' } });
+                  }
                 }else{
                   this.msj = true;
                   this.msjText = response["msj"];
@@ -122,6 +132,11 @@ export class Tab3Page {
               }
           );
       }
+  }
+
+  public logout(){
+    this.storage.clear();
+    this.route.navigate([encodeURI("home")]);
   }
 
 }
