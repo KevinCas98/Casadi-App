@@ -1,18 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      CaSaDi
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 <ion-content class="auth-form">
   <ion-grid>
     <ion-row>
-      <ion-col align-self-center>
-        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Registrarse</ion-button>
-        <span class="divider line one-line">o <br/></span>
-        <span class="already">¿Ya tiene un usuario?</span>
-        <ion-button [routerLink]="['/login']" expand="block" color="danger">Iniciar Sesión</ion-button>
+      <ion-col>
+        <ion-img [src]="'/assets/imgs/logo_casadi.png'"></ion-img>
+        <ion-button class="login" [routerLink]="['/login']" expand="block" shape="round">INICIAR SESIÓN</ion-button>
+        <ion-text><h4>¿Todavía no tenés un usuario?</h4></ion-text>
+        <ion-button class="register" [routerLink]="['/registration']" expand="block" shape="round">REGISTRARSE</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

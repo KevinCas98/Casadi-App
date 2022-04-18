@@ -36,4 +36,8 @@ export class UserService {
     return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/carnet', formData)
   }
 
+  public getDoseByUser(id: number){
+    return this.http.get<{ data: any }>(this.global.getBaseApiUrl()+'users/get-dose?id_user='+id)
+  }
+
 }

@@ -52,3 +52,39 @@
     color: #971e49;
     opacity: 1;
   }
+
+  ion-input {
+    border-color: #000000;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    --padding-start: 10px;
+  }
+
+  ion-button {
+    --background: #0b334d;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 25px;
+    font-weight: bold;
+  }
+
+  ion-item {
+    margin-top: 15px;
+  }
+
+  ion-text {
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: #eb5e6c;
+    h4 {
+      font-weight: bold;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+  ion-label {
+    font-weight: bold;
+  }

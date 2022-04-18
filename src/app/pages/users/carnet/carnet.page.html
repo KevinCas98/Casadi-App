@@ -37,7 +37,11 @@
           <h1>DOCUMENTO</h1>
           <h2>{{data.dni}}</h2>
           <h1 *ngIf="carnetState > 1">DOSIS</h1>
-          <h4 *ngIf="carnetState > 1">{{data.doseQuantity}} ({{data.doseQuantity}}) SPUTNIK / SPUTNIK<br>SPUTNIK / SPUTNIK </h4>
+          <h4 *ngIf="carnetState > 1">{{data.doseQuantity}} ({{data.doseQuantity}}) 
+            <samp *ngFor="let item of dataDoce | keyvalue">
+              <samp>/{{ item.value.vaccines.name }}</samp>  
+            </samp>
+          </h4>
         </ion-text>
         <ion-button *ngIf="carnetState == 0" href="carnet-load" color="danger" shape="round">CARGAR CERTIFICADO</ion-button>
       </ion-card-content>

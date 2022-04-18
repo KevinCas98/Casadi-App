@@ -11,6 +11,7 @@ export class CarnetPage implements OnInit {
 
   public carnetState: number;
   public data: any[] = [];
+  public dataDoce: any[] = []; 
 
 
   constructor(
@@ -25,6 +26,11 @@ export class CarnetPage implements OnInit {
         (response) => {
           this.data = response["user"][response["user"]["id"]];
           this.carnetState = response["user"][response["user"]["id"]]["checked"];
+          this.userService.getDoseByUser(response["user"]["id"]).subscribe(
+            (dose)=>{
+              this.dataDoce = dose["dose"];
+            }
+          )
         } 
       );
     });
