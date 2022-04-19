@@ -27,23 +27,23 @@
     <div class="homescreen-content" scroll="false">
       <div class="split news">
         <div class="news-centered">
-          <p class="news-text">NOVEDADES DEL MUNICIPIO</p>
+          <p class="news-text">NOVEDADES<br> DEL MUNICIPIO</p>
         </div>
       </div>
       <hr>
-      <div class="split validation">
+      <div  *ngIf="checked == 0" class="split validation">
         <div class="validation-centered">
-          <p class="validation-text">VALIDÁ TU IDENTDIAD Y ACCEDÉ A TU 
+          <p class="validation-text">VALIDÁ TU IDENTIDAD Y ACCEDÉ A TU 
             CARNET SALUDABLE DIGITAL</p>
-            <ion-button [routerLink]="['/tabs/tab3']" id="" color="danger" expand="block" shape="round" size="large">VALIDAR IDENTIDAD</ion-button>
+            <ion-button [routerLink]="['/tabs/profile']" id="" color="danger" expand="block" shape="round" size="large">VALIDAR IDENTIDAD</ion-button>
         </div>
       </div>
-      <!-- <div class="split carnet">
+      <div *ngIf="checked == 2" class="split carnet">
         <div class="carnet-centered">
           <p class="carnet-text">ACCEDÉ A TU CARNET SALUDABLE DIGITAL AQUÍ</p>
-            <ion-button [routerLink]="['']" id="" color="danger" expand="block" shape="round" size="large">MI CARNET</ion-button>
+            <ion-button [routerLink]="['/carnet']" id="" color="danger" expand="block" shape="round" size="large">MI CARNET</ion-button>
         </div>
-      </div> -->
+      </div>
     </div>
   </ion-content>
 </div>

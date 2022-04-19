@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CarnetLoadPageRoutingModule } from './carnet-load-routing.module';
+import { CarnetPageRoutingModule } from './carnet-routing.module';
 
-import { CarnetLoadPage } from './carnet-load.page';
+import { CarnetPage } from './carnet.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CarnetLoadPageRoutingModule
+    CarnetPageRoutingModule
   ],
-  declarations: [CarnetLoadPage]
+  declarations: [CarnetPage]
 })
-export class CarnetLoadPageModule {}
+export class CarnetPageModule {}

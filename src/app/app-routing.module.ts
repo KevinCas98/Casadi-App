@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' 
+  { path: '', redirectTo: 'main', pathMatch: 'full' 
   },
   { path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'carnet-load',
-    loadChildren: () => import('./pages/carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
+    loadChildren: () => import('./pages/users/carnet-load/carnet-load.module').then( m => m.CarnetLoadPageModule)
   },
   {
     path: 'stores-list',
@@ -55,6 +55,11 @@ const routes: Routes = [
     path: 'benefits-take/:store/:benefit',
     loadChildren: () => import('./pages/benefits/take/take.module').then( m => m.TakePageModule)
   },
+  {
+    path: 'carnet',
+    loadChildren: () => import('./pages/users/carnet/carnet.module').then( m => m.CarnetPageModule)
+  },
+
 ];
 @NgModule({
   imports: [

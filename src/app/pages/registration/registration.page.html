@@ -1,37 +1,51 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Registrarse</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="header-section">
+  <ion-header slot="start" [translucent]="true">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row size="12" class="ion-text-center ion-align-items-center">
+          <ion-col size="3" class="ion-text-start">
+            <ion-buttons slot="start">
+              <ion-back-button></ion-back-button>
+            </ion-buttons>
+          </ion-col>
+          <ion-col size="6">
+            <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
+          </ion-col>
+          <ion-col size="3" class="ion-text-end">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+</div>
+
 <ion-content>
+  <ion-text><h4>REGISTRARME</h4></ion-text>
   <form [formGroup]="userData" (ngSubmit)="registrationForm()" novalidate>
-    <ion-item lines="full">
-      <ion-label position="floating">Nombre</ion-label>
+    <ion-item lines="none">
+      <ion-label position="stacked">Nombre</ion-label>
       <ion-input type="text" formControlName="name" required></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
       * El campo es requerido
     </span>
-    <ion-item lines="full">
-      <ion-label position="floating">Apellido</ion-label>
+    <ion-item lines="none">
+      <ion-label position="stacked">Apellido</ion-label>
       <ion-input type="text" formControlName="last_name" required></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.last_name.errors?.required">
       * El campo es requerido
     </span>
-    <ion-item lines="full">
-      <ion-label position="floating">DNI</ion-label>
+    <ion-item lines="none">
+      <ion-label position="stacked">DNI</ion-label>
       <ion-input type="text" formControlName="dni" required></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dni.errors?.required">
       * El campo es requerido
     </span>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" formControlName="email" required></ion-input>
+    <ion-item lines="none">
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" formControlName="email" required></ion-input>
     </ion-item>
     <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
       * El campo es requerido
@@ -40,8 +54,8 @@
     <small class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
       * El email no es valido
     </small>
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
+    <ion-item lines="none">
+      <ion-label position="stacked">Contraseña</ion-label>
       <ion-input type="password" formControlName="password" required></ion-input>
     </ion-item>
     <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
@@ -52,7 +66,7 @@
     </span>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">CONFIRMAR</ion-button>
+        <ion-button type="submit" shape="round" expand="block">CONFIRMAR</ion-button>
       </ion-col>
     </ion-row>
   </form>

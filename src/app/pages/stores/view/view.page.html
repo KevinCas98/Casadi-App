@@ -18,64 +18,53 @@
 </div>
 
 <ion-content [fullscreen]="true">
-  <img class="store-img" [src]="'assets/imgs/mesitaBanner.png'">
-  <!-- <ion-list>
-    <ion-item>
-      <ion-label (click)="goToTakeBenefits(data.id, benefit.id)">
-        <h2>{{ data.name }}</h2>
-        <h3>{{ data.id }}</h3>
-        <h3>{{ data.cuit }}</h3>
-        <h3>{{ category.id }}</h3>
-        <h3>{{ category.name }}</h3>
-        <h3>{{ benefit.id }}</h3>
-        <h3>{{ benefit.name }}</h3>
-        <h3>{{ benefit.pin }}</h3>
-        <h3>{{ benefit.conditions }}</h3>
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
+  <img class="store-img" [src]="urlWeb+'stores/'+data.id+'/'+data.image2" [src]="'assets/imgs/mesitaBanner.png'">
   <ion-grid [fixed]="true">
     <ion-row size="12">
-      <ion-col size="8" class="store-title"> 
+      <ion-col size="9" class="store-title"> 
         <h2>{{ data.name }}</h2>
         <ion-icon name="pricetags-sharp" class="pricetag"></ion-icon>
         <h5 class="label">{{ category.name }}</h5>
       </ion-col>
-      <ion-col size="4"> 
-        <div class="container">
-          <div class="box"><ion-icon name="logo-instagram"></ion-icon></div>
-          <div class="box"><ion-icon name="logo-whatsapp"></ion-icon></div>
-          <div class="box"><ion-icon name="globe"></ion-icon></div>
+      <ion-col size="3"> 
+        <div class="social">
+          <div class="box" style="border-right: 1px solid #a9bf59; border-bottom:1px solid #a9bf59;"><ion-icon name="logo-instagram"></ion-icon></div>
+          <div class="box" style="border-bottom: 1px solid #a9bf59;"><ion-icon name="logo-whatsapp" ></ion-icon></div>
+          <div class="box" style="border-right: 1px solid #a9bf59;"><ion-icon name="globe"></ion-icon></div>
           <div class="box"><ion-icon name="call"></ion-icon></div>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-button expand="block" shape="round" class="pinButton" (click)="goToTakeBenefits(data.id, benefit.id)"> UTILIZAR BENEFICIO </ion-button>
+
+  <ion-button *ngIf="checked == 0" class="pinButton" [routerLink]="['/tabs/profile']" expand="block"  shape="round" style="color: #ffffff; --background: #c60a0a;">CARGAR CERTIFICADO</ion-button>
+  <ion-button *ngIf="checked == 1" class="pinButton" [routerLink]="['/carnet']" expand="block"  shape="round" style="--background: #ff8900;">VERIFICANDO CERTIFICADO</ion-button>
+
+  <ion-button *ngIf="checked == 2" expand="block" shape="round" class="pinButton" (click)="goToTakeBenefits(data.id, benefit.id)"> UTILIZAR BENEFICIO </ion-button>
   <h4>BENEFICIOS</h4>
   <hr>
   <p style="text-transform: uppercase;">{{ benefit.name }}.</p>
+
   <h4>CONDICIONES</h4>
   <hr>
   <p style="text-transform: uppercase;">{{ benefit.conditions }}.</p>
+
   <h4>DIRECCIÓN/ES</h4>
   <hr>
-  <p style="text-transform: uppercase;">
-    <ion-icon id="locate" name="locate"></ion-icon><br>
+  <p style="text-transform: uppercase;">{{ data.address }}</p>
 
-  </p>
   <h4>¿CÓMO CANJEAR?</h4>
   <hr>
   <p>
-    EXISTEN DOS FORMAS DE CANJEAR LOS BENEFICIOS:<br>
-    / HACIENDO CLIC EN EL BOTÓN “UTILIZAR BENEFICIO”<br>
+    EXISTEN DOS FORMAS DE CANJEAR LOS BENEFICIOS:<br><br>
+    / HACIENDO CLIC EN EL BOTÓN “UTILIZAR BENEFICIO”<br><br>
     Para lo cual deberás solicitar al personal del comercio promotor
-    que ingrese su PIN para validar el beneficio.<br>
-    / PRESENTANDO EL CARNET SALUDABLE<br>
-    Ingresá desde el “Home” a tu carnet saludable y presentalo al
+    que ingrese su PIN para validar el beneficio.<br><br>
+    / PRESENTANDO EL CARNET SALUDABLE<br><br>
+    Ingresá desde el “ Home ” a tu carnet saludable y presentalo al
     personal del comercio promotor, quien lo escaneará para validar
     el beneficio.
-  </p>
+  </p><br>
   <h3>PODRÁN PEDIRTE TU DNI PARA VALIDAR TU IDENTIDAD.<br>
     PODRÁS CONSULTAR TUS MOVIMIENTOS EN<br>
     PERFIL - ÚLTIMOS MOVIMIENTOS.</h3>

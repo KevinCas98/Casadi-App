@@ -1,0 +1,32 @@
+ion-content {
+    color: #ffffff;
+    --background: #05253b;
+    // background-image: url(/assets/imgs/backLogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+ion-button {
+    --background: #eb5e6c;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 17px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20%;
+}
+
+.login {
+    margin-top: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.register {
+    margin-top: 7%;
+    margin-left: 20%;
+    margin-right: 20%;
+}

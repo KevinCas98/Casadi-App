@@ -1,10 +1,14 @@
 ion-content {
-    background-color: #05253b;
+    --background: #05253b;
     margin-bottom: 55px;
 }
 
 ion-list {
     background-color: #05253b;
+}
+
+ion-icon {
+    color: #ffffff;
 }
 
 .header-img {
@@ -14,30 +18,27 @@ ion-list {
     display: block;
 }
 
-ion-icon {
-    color: #ffffff;
-}
-
 .store-img {
     width: 100%;
     height: auto;
-    box-shadow: 0 6px 8px 0 #0000004d;
 }
 
-.container{
-    margin: 5px 0px 0px 15px;
-    width: 20px;
-    height: 30px;
+.social {
+    color: #ffffff;
+    // margin: 0px 0px 0px 17%;
+    max-width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 40px 40px;
     grid-template-rows: 40px 40px;
-    grid-column-gap: 2px;
-    grid-row-gap: 2px;
+    // grid-column-gap: 1.5px;
+    // grid-row-gap: 1.5px;
+    // background-color: #a9bf59;
 }
 
 .box{
     background-color: #05253b;
-    color: #05253b;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,19 +53,19 @@ ion-icon {
 }
 
 h2 {
-    color: #05253b;
+    color: #a9bf59;
     margin: 5px 0px 0px 0px;
     text-transform: uppercase;
 }
 
 .pricetag {
-    color: #05253b;
+    color: #a9bf59;
     font-size: 16px;
     transform: rotateY(180deg);
 }
 
 .label {
-    color: #05253b;
+    color: #a9bf59;
     font-size: 14px;
     display: inline-block;
     text-transform: uppercase;
@@ -72,14 +73,15 @@ h2 {
 }
 
 .pinButton {
-    color: #ffffff;
+    color: #000000;
     margin: 10px 55px 10px 55px;
-    --background: #05253b;
+    --background: #a9bf59;
     font-weight: bold;
     letter-spacing: 1.8px;
 }
 
 h4 {
+    color: #ffffff;
     font-size: 16px;
     font-weight: bold;
     margin: 30px 0px 0px 20px;
@@ -92,25 +94,23 @@ hr {
     border-top-color: currentcolor;
     border-top-style: none;
     border-top-width: 0px;
-    border-top: 3px solid #05253b;
+    border-top: 2px solid #a9bf59;
     margin: 3px 160px 5px 5px;
     padding: 0;
 }
 
 p {
+    color: #ffffff;
     margin: 10px 25px 0px 15px;
     font-size: 12px;
+    letter-spacing: 1.2px;
 }
 
 h3 {
+    color: #ffffff;
     font-style: italic;
     text-align: center;
-    color: #05253b;
+    color: #a9bf59;
     font-size: 10px;
     margin-bottom: 25px;
-}
-
-#locate {
-    color: #05253b;
-    font-size: 15px;
 }

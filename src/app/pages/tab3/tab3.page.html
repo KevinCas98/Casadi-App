@@ -12,8 +12,8 @@
             <ion-img [src]="'assets/imgs/logoMuni2.png'"></ion-img>
           </ion-col>
           <ion-col size="3" class="ion-text-end">
-            <ion-button fill="clear" shape="round">
-              <ion-icon name="notifications-outline" size="large"></ion-icon>
+            <ion-button fill="clear" shape="round" (click)="logout()">
+              <ion-icon name="log-out" size="large"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -25,33 +25,69 @@
 <ion-content [fullscreen]="true">
   <div id="profile">
     <p id="title">PERFIL</p>
-    <ion-avatar id="avatar">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    <ion-avatar *ngIf="data.profileImg" id="avatar">
+      <ion-img [src]="urlWeb+'users/'+data.id+'/'+data.profileImg"></ion-img>
     </ion-avatar>
-    <ion-button id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-text>
+      <h5 id="name">{{data.name}} {{data.lastName}}</h5>
+      <h5 id="dni">DNI: {{data.dni}}</h5>
+    </ion-text>
+    <ion-button *ngIf="data.checked == 0" id="carnet-load" [routerLink]="['/carnet-load']" shape="round" color="success">CARGAR CERTIFICADO</ion-button>
+    <ion-button *ngIf="data.checked == 1" [routerLink]="['/carnet']" shape="round" color="warning">VERIFICANDO CERTIFICADO</ion-button>
+    <ion-button *ngIf="data.checked == 2" id="carnet" [routerLink]="['/carnet']" shape="round" color="success">VER CARNET</ion-button>
     <ion-button id="record-benefits" [routerLink]="['/record-benefits']" shape="round" color="danger">ÚLTIMOS MOVIMIENTOS</ion-button>
-    <form id="profile-form">
+    <form [formGroup]="userData" (ngSubmit)="profileForm()" novalidate id="profile-form">
+      <small class="error ion-padding" *ngIf="msj">{{ msjText }}</small>
       <ion-item lines="full">
-        <ion-input type="text" placeholder="SEXO" required></ion-input>
+        <input type="file" name="file" (change)="uploadFile($event)">
       </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="name" placeholder="NOMBRE" required></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="last_name" placeholder="APELLIDO" required></ion-input>
+      </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dni.errors?.required">
+        * El campo es requerido
+      </span>
       <ion-item lines="full">
-        <ion-input type="date" placeholder="FECHA DE NACIMIENTO" required></ion-input>
+        <ion-select formControlName="sex" placeholder="GENERO">
+          <ion-select-option value="F">Femenino</ion-select-option>
+          <ion-select-option value="M">Masculino</ion-select-option>
+          <ion-select-option value="O">Otro</ion-select-option>
+        </ion-select>
       </ion-item>
-      <ion-item lines="full">
-        <ion-input type="number" placeholder="DNI" required></ion-input>
+      <ion-item lines="none">
+        <ion-label>FECHA DE NACIMIENTO</ion-label>
+        <ion-input type="date" formControlName="dateOfBirth" required></ion-input>
       </ion-item>
-      <ion-item lines="full">
-        <ion-input type="number" placeholder="TELEFONO"></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dateOfBirth.errors?.required">
+        * El campo es requerido
+      </span>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="dni" placeholder="DNI" required></ion-input>
       </ion-item>
-      <ion-item lines="full">
-        <ion-input type="text" placeholder="EMAIL"></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.dni.errors?.required">
+        * El campo es requerido
+      </span>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="contact" placeholder="TELÉFONO" required></ion-input>
       </ion-item>
-      <ion-item lines="full">
-        <ion-input type="text" placeholder="PROVINCIA" required></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contact.errors?.required">
+        * El campo es requerido
+      </span>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="province" placeholder="PROVINCIA" required></ion-input>
       </ion-item>
-      <ion-item lines="full">
-        <ion-input type="text" placeholder="CIUDAD" required></ion-input>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.province.errors?.required">
+        * El campo es requerido
+      </span>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="city" placeholder="CIUDAD" required></ion-input>
       </ion-item>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.city.errors?.required">
+        * El campo es requerido
+      </span>
       <ion-row>
         <ion-col>
           <ion-button href="#" type="submit" color="danger" expand="block" size="large" shape="round">GUARDAR</ion-button>

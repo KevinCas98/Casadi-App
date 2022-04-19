@@ -24,4 +24,20 @@ export class UserService {
     return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/login', formData)
   }
 
+  public getUserByToken(token: string){
+      return this.http.get<{ data: any }>(this.global.getBaseApiUrl()+'users/view?type_by=token&token='+token)
+  }
+
+  public profileUser(formData: FormData):Observable<any>{
+    return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/update', formData)
+  }
+
+  public carnetLoadUser(formData: FormData):Observable<any>{
+    return this.http.post<{ data: any[] }>(this.global.getBaseApiUrl()+'users/carnet', formData)
+  }
+
+  public getDoseByUser(id: number){
+    return this.http.get<{ data: any }>(this.global.getBaseApiUrl()+'users/get-dose?id_user='+id)
+  }
+
 }

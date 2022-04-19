@@ -35,10 +35,10 @@
           <ion-button id="sendButton" type="submit" shape="round" expand="block">VALIDAR</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button id="carnetButton" fill="clear" expand="block">VER CARNET DEL USUARIO</ion-button>
+          <ion-button id="carnetButton" href="carnet" fill="clear" expand="block">VER CARNET DEL USUARIO</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button defaultHref="stores-view/:id" id="abortButton" fill="clear" expand="block">CANCELAR</ion-button>
+          <ion-button id="abortButton" href="tabs/benefits" fill="clear" expand="block">CANCELAR</ion-button>
         </ion-col>
       </ion-row>
     </form>
@@ -48,5 +48,6 @@
       <h1>CARGA DE PIN</h1>
       <h2>/ Este espacio está previsto para que el personal del comercio promotor, ingrese su PIN para validar tu beneficio.<br>/ Simplemente deberás mostrarle tu celular para que lo cargue.</h2>
     </ion-text>
+    <ion-img id="manitofono" [src]="'assets/imgs/manitofono.svg'"></ion-img>
   </div>
 </ion-content>

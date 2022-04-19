@@ -9,7 +9,7 @@ import { BenefitsService } from '../../../services/api/benefits/benefits.service
 })
 export class TakePage implements OnInit {
 
-  private benefitData : FormGroup;
+  public benefitData : FormGroup;
   isSubmitted = false;
   public store: number;
   public benefits: number;

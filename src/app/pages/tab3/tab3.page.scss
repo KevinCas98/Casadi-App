@@ -1,51 +1,107 @@
 ion-img {
-    height: auto;
-    width: auto;
-    margin: auto;
-    display: block;
+  height: auto;
+  width: auto;
+  margin: auto;
+  display: block;
 }
 
 ion-icon {
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
- ion-content {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-p{
-
+ion-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 #profile {
-    margin: auto;
-    width: auto;
-    padding: 20px;
-    margin-bottom: 55px;
+  margin: auto;
+  width: auto;
+  padding: 20px;
+  margin-bottom: 80px;
 }
 
 #carnet-load {
-    margin-top: 25px;
+  margin-top: 25px;
+}
+
+#carnet {
+  margin-top: 25px;
 }
 
 #record-benefits {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 #profile-form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #avatar {
-    margin: auto;
+  margin: auto;
 }
 
 #title {
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: rgb(235, 94, 108);
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: rgb(235, 94, 108);
+}
+
+.error{
+  font-size: 11px;
+  color: red;
+}
+
+ion-item {
+  border: 1.5px solid #05253b;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+}
+
+ion-select {
+  color: #545ca7;
+  --placeholder-color: #000000;
+  --placeholder-opacity: 1;
+  width: 100%;
+  justify-content: center;
+}
+
+ion-select::part(placeholder),
+ion-select::part(text) {
+  flex: 0 0 auto;
+}
+
+ion-select::part(placeholder) {
+  color: #000000;
+  opacity: 1;
+}
+
+ion-select::part(placeholder)::first-letter {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+ion-select::part(text) {
+  color: #000000;
+}
+
+ion-select::part(icon) {
+  color: #971e49;
+  opacity: 1;
+}
+
+
+#name {
+  font-weight: bold;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: rgb(11, 51, 77);
+}
+
+#dni {
+  font-size: 18px;
+  color: rgb(11, 51, 77);
 }

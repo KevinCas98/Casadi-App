@@ -21,6 +21,14 @@ export class Tab2Page {
    }
 
   ngOnInit() {
+    this.reloadData();
+  }
+
+  ionViewWillLeave() {
+    this.reloadData();
+  }
+
+  public reloadData(){
     this.urlWeb = this.globalCommon.getBaseWebUrl();
     this.data = [];
     this.listStores();
